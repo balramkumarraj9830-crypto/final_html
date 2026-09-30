@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auralis — playlist</title>
+
+     <!-- --febicon -- -->
+     <link rel="shortcut icon" href="./favicon/favicon.ico" type="image/x-icon" >
+
+
+    <link rel="stylesheet" href="./output/style.css">
+
+
+    <!-- --font osum cdn link --- -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css"
+        integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+</head>
+
+<body class="bg-black2 text-white font-inter">
+
+    <!-- ================= NAVBAR ================= -->
+    <header id="mainHeader"
+        class="fixed left-0 top-0 z-[9999] w-full border-b border-white/[0.05] bg-[#101010]/90 py-4 backdrop-blur-xl">
+
+        <div class="mx-auto flex w-full items-center justify-between px-5 lg:px-8">
+
+            <!-- =================================================
+                 LOGO
+            ================================================== -->
+
+            <a href="#" class="flex shrink-0 items-center gap-3 sm:gap-[23px]">
+
+                <img src="./img/home/logo.png" alt="Auralis logo" class=" sm:h-10">
+
+                <span class="font-inter text-2xl font-bold tracking-tight text-green2 sm:text-[40px]">
+                    Auralis
+                </span>
+            </a>
+            <!-- =================================================
+                 DESKTOP NAVIGATION
+            ================================================== -->
+
+            <nav class="hidden lg:block">
+                <ul class="flex items-center justify-between gap-8">
+
+                    <li>
+                        <a href="index.html" class="font-bold  transition hover:text-green2">
+                            Home
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="explore.html" class="text-white transition hover:text-green2">
+                            Explore
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="playlists.html" class="text-green2 transition hover:text-green2">
+                            Playlists
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="library.html" class="text-white transition hover:text-green2">
+                            Library
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="premium.html" class="text-white transition hover:text-green2">
+                            Premium
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- =================================================
+                 DESKTOP RIGHT SIDE
+            ================================================== -->
+            <div class="hidden items-center gap-4 lg:flex">
+
+                <!-- Search -->
+                <div class="relative w-full max-w-[320px] xl:w-[462px]">
+                    <div class="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-white opacity-60">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                    <input id="searchInput" type="text" placeholder="Search artists, songs, albums"
+                        class="w-full rounded-full border border-transparent bg-gray4 py-3 pl-11 pr-4 text-xs text-white outline-none placeholder:text-gray6 transition focus:border-green2/30">
+                </div>
+                <!-- Notification -->
+
+                <button type="button" class="shrink-0 border-r border-gray3 pr-4 text-gray1 transition hover:text-white"
+                    title="Notifications" aria-label="Notifications">
+                    <i class="fa-regular fa-bell"></i>
+                </button>
+                <!-- Profile -->
+                <button type="button" class="shrink-0" aria-label="Profile">
+                    <img src="./img/home/profile_img.png" alt="Profile" class=" object-cover">
+                </button>
+            </div>
+
+
+            <!-- =================================================
+                 MOBILE MENU BUTTON
+            ================================================== -->
+
+            <button id="menuBtn" type="button"
+                class="rounded-lg bg-white/5 p-2 text-xl text-white transition hover:bg-white/10 lg:hidden"
+                aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+
+                <i id="menuIcon" class="fa-solid fa-bars">
+                </i>
+            </button>
+        </div>
+
+        <!-- =====================================================
+             MOBILE MENU
+        ====================================================== -->
+
+        <div id="mobileMenu"
+            class="absolute left-0 right-0 top-full hidden border-b border-white/10 bg-[#101010]/95 p-5 shadow-2xl backdrop-blur-2xl lg:hidden">
+
+            <div class="flex flex-col gap-5">
+                <!-- Mobile Search -->
+                <div class="relative w-full">
+                    <div class="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-white opacity-60">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                    <input id="mobileSearchInput" type="text" placeholder="Search artists, songs, albums"
+                        class="h-10 w-full rounded-full bg-[#242424] pl-11 pr-4 text-sm text-white outline-none focus:border focus:border-green2/40">
+                </div>
+                <!-- Mobile Links -->
+
+                <a href="index.html" class="border-b border-white/5 py-1 font-semibold ">
+                    Home
+                </a>
+                <a href="explore.html" class="border-b border-white/5 py-1  transition hover:text-white">
+                    Explore
+                </a>
+                <a href="playlists.html" class="border-b border-white/5 py-1 text-green2 transition hover:text-white">
+                    Playlists
+                </a>
+                <a href="library.html" class="border-b border-white/5 py-1 text-gray-300 transition hover:text-white">
+                    Library
+                </a>
+
+                <a href="premium.html" class="py-1 text-gray-300 transition hover:text-white">
+                    Premium
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="pt-[179px]">
+        <!-- --banner --- -->
+        <section
+            class="mb-[72px] p-12 flex flex-col gap-10 rounded-t-md bg-[radial-gradient(circle_at_30%_20%,rgba(26,70,39,.42),transparent_55%)] px-0 py-3 sm:py-7 lg:flex-row lg:items-center lg:gap-10 lg:px-12">
+
+
+            <div
+                class="cover-main mx-auto aspect-square w-full max-w-[320px] shrink-0 overflow-hidden rounded-xl shadow-2xl shadow-black/50 sm:max-w-[350px] lg:mx-0 lg:w-[320px]">
+                <div>
+                    <img src="./img/playlist/banner.png" alt="banner img">
+                </div>
+            </div>
+
+            <div class=" justify-center">
+                <p class="text-xl mb-4 font-bold uppercase tracking-[3.2px] text-green sm:text-sm">Featured Playlist
+                </p>
+                <h1 class="mb-4 text-2xl font-extrabold leading-4 tracking-[-0.8px] sm:text-3xl">Midnight Neon</h1>
+                <p class="mb-4 text-xl text-gray1 font-medium sm:text-base">
+                    A curated high-fidelity journey through nocturnal synth wave and cinematic electronics.
+                    Designed for late-night city drives and digital exploration.
+                </p>
+
+                <div class="mb-4 pt-2 flex flex-wrap items-center gap-4 text-xs text-gray1 sm:text-sm">
+                    <span class="flex items-center gap-2 text-white text-[16px]">
+                        <img src="./img/playlist/Curator.png" alt="curator">
+                        Auralis Team
+                    </span>
+
+                    <span class="text-gray3">•</span>
+                    <span class="font-medium">24 Tracks</span>
+                    <span class="text-gray3">•</span>
+                    <span class="font-medium">1 hr 42 min</span>
+                </div>
+
+                <div class=" pt-6 flex items-center gap-6">
+                    <div class="rounded-[9999px] bg-green text-green1 px-8 py-3 hover:bg-black">
+                        <a href="#" class="flex gap-2">
+                            <img src="./img/playlist/play_button.png" alt="play_button">
+                            <span>Play All </span>
+                        </a>
+                    </div>
+                    <button class=""><img src="./img/playlist/like.png" alt="like"></button>
+                    <button class=""><img src="./img/playlist/share.png" alt="share"></button>
+                </div>
+            </div>
+
+
+
+        </section>
+
+
+        <section class="mb-12 sm:mb-16 lg:mb-[72px]">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+
+                <!-- Main wrapper -->
+                <div class="flex flex-col xl:flex-row gap-10 xl:gap-16">
+
+                    <!-- Tracks -->
+                    <div class="w-full xl:w-1/2 px-0 xl:px-7">
+
+                        <!-- Header -->
+                        <div
+                            class="mb-2 flex w-full items-center text-xs sm:text-sm lg:text-[15px] xl:text-[16px] text-gray1 font-medium">
+
+                            <div class="flex w-1/2 items-center gap-2 sm:gap-3">
+                                <span class="uppercase">Title</span>
+                            </div>
+
+                            <div class="flex w-1/2 items-center justify-between gap-2">
+                                <span class="uppercase">Artist</span>
+
+                                <span>
+                                    <img src="./img/playlist/time.png" alt="time"
+                                        class="w-auto max-w-full object-contain">
+                                </span>
+                            </div>
+                        </div>
+
+
+                        <!-- Track List -->
+                        <div>
+
+                            <!-- Track 01 -->
+                            <div class="mb-1 flex w-full items-center py-2 sm:py-2 hover:bg-green1">
+                                <div class="flex w-1/2 min-w-0 items-center gap-2 sm:gap-3">
+
+                                    <span
+                                        class="shrink-0 pl-1 sm:pl-2 lg:pl-4 font-manrope font-medium text-xs sm:text-sm lg:text-[16px] text-gray1">
+                                        01
+                                    </span>
+
+                                    <div class="flex min-w-0 items-center gap-2 sm:gap-3">
+                                        <img src="./img/playlist/title1.png" alt="Circuit Breaker"
+                                            class="shrink-0 max-w-full object-contain">
+
+                                        <p class="truncate py-2 font-medium text-sm sm:text-base lg:text-lg xl:text-xl">
+                                            Circuit Breaker
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="flex w-1/2 min-w-0 items-center justify-between gap-2">
+                                    <p
+                                        class="truncate py-2 text-xs sm:text-sm lg:text-[15px] xl:text-[16px] text-gray1">
+                                        Vortex Division
+                                    </p>
+
+                                    <p
+                                        class="shrink-0 py-2 text-xs sm:text-sm lg:text-[15px] xl:text-[16px] text-gray1">
+                                        4:12
+                                    </p>
+                                </div>
+                            </div>
+
+
+                            <!-- Track 02 -->
+                            <div class=" mb-1 flex w-full items-center py-2 sm:py-2 hover:bg-green1">
+                                <div class="flex w-1/2 min-w-0 items-center gap-2 sm:gap-3">
+                                    <span
+                                        class="shrink-0 pl-1 sm:pl-2 lg:pl-4 font-manrope font-medium text-xs sm:text-sm lg:text-[16px] text-gray1">
+                                        02
+                                    </span>
+
+                                    <div class="flex min-w-0 items-center gap-2 sm:gap-3">
+                                        <img src="./img/playlist/title2.png" alt="Digital Mirage"
+                                            class="shrink-0 max-w-full object-contain">
+
+                                        <p class="truncate py-2 font-medium text-sm sm:text-base lg:text-lg xl:text-xl">
+                                            Digital Mirage
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="flex w-1/2 min-w-0 items-center justify-between gap-2">
+                                    <p
+                                        class="truncate py-2 text-xs sm:text-sm lg:text-[15px] xl:text-[16px] text-gray1">
+                                        Luminary Pulse
+                                    </p>
+
+                                    <p
+                                        class="shrink-0 py-2 text-xs sm:text-sm lg:text-[15px] xl:text-[16px] text-gray1">
+                                        3:45
+                                    </p>
+                                </div>
+                            </div>
+
+
+                            <!-- Track 03 -->
+                            <div class="mb-1 flex w-full items-center py-2 hover:bg-green1">
+                                <div class="flex w-1/2 min-w-0 items-center gap-2 sm:gap-3">
+                                    <span
+                                        class="shrink-0 pl-1 sm:pl-2 lg:pl-4 font-manrope font-medium text-xs sm:text-sm lg:text-[16px] text-gray1">
+                                        03
+                                    </span>
+
+                                    <div class="flex min-w-0 items-center gap-2 sm:gap-3">
+                                        <img src="./img/playlist/title3.png" alt="Khat"
+                                            class="shrink-0 max-w-full object-contain">
+
+                                        <p class="truncate py-2 font-medium text-sm sm:text-base lg:text-lg xl:text-xl">
+                                            Khat
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="flex w-1/2 min-w-0 items-center justify-between gap-2">
+                                    <p
+                                        class="truncate py-2 text-xs sm:text-sm lg:text-[15px] xl:text-[16px] text-gray1">
+                                        Navjot Ahuja
+                                    </p>
+
+                                    <p
+                                        class="shrink-0 py-2 text-xs sm:text-sm lg:text-[15px] xl:text-[16px] text-gray1">
+                                        5:45
+                                    </p>
+                                </div>
+                            </div>
+
+
+                            <!-- Track 04 -->
+                            <div class="mb-1 flex w-full items-center py-2 hover:bg-green1">
+                                <div class="flex w-1/2 min-w-0 items-center gap-2 sm:gap-3">
+                                    <span
+                                        class="shrink-0 pl-1 sm:pl-2 lg:pl-4 font-manrope font-medium text-xs sm:text-sm lg:text-[16px] text-gray1">
+                                        04
+                                    </span>
+
+                                    <div class="flex min-w-0 items-center gap-2 sm:gap-3">
+                                        <img src="./img/playlist/title4.png" alt="Aa jao"
+                                            class="shrink-0 max-w-full object-contain">
+
+                                        <p class="truncate py-2 font-medium text-sm sm:text-base lg:text-lg xl:text-xl">
+                                            Aa jao
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="flex w-1/2 min-w-0 items-center justify-between gap-2">
+                                    <p
+                                        class="truncate py-2 text-xs sm:text-sm lg:text-[15px] xl:text-[16px] text-gray1">
+                                        Javed Ali
+                                    </p>
+
+                                    <p
+                                        class="shrink-0 py-2 text-xs sm:text-sm lg:text-[15px] xl:text-[16px] text-gray1">
+                                        3:45
+                                    </p>
+                                </div>
+                            </div>
+
+
+                            <!-- Track 05 -->
+                            <div class="mb-1 flex w-full items-center py-2 hover:bg-green1">
+                                <div class="flex w-1/2 min-w-0 items-center gap-2 sm:gap-3">
+                                    <span
+                                        class="shrink-0 pl-1 sm:pl-2 lg:pl-4 font-manrope font-medium text-xs sm:text-sm lg:text-[16px] text-gray1">
+                                        05
+                                    </span>
+
+                                    <div class="flex min-w-0 items-center gap-2 sm:gap-3">
+                                        <img src="./img/playlist/title5.png" alt="We Don't Talk Anymore"
+                                            class="shrink-0 max-w-full object-contain">
+
+                                        <p class="truncate py-2 font-medium text-sm sm:text-base lg:text-lg xl:text-xl">
+                                            We Don't Talk Anymore
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="flex w-1/2 min-w-0 items-center justify-between gap-2">
+                                    <p
+                                        class="truncate py-2 text-xs sm:text-sm lg:text-[15px] xl:text-[16px] text-gray1">
+                                        Charlie Puth
+                                    </p>
+
+                                    <p
+                                        class="shrink-0 py-2 text-xs sm:text-sm lg:text-[15px] xl:text-[16px] text-gray1">
+                                        6:45
+                                    </p>
+                                </div>
+                            </div>
+
+
+                            <!-- Track 06 -->
+                            <div class="mb-1 flex w-full items-center py-2 hover:bg-green1">
+                                <div class="flex w-1/2 min-w-0 items-center gap-2 sm:gap-3">
+                                    <span
+                                        class="shrink-0 pl-1 sm:pl-2 lg:pl-4 font-manrope font-medium text-xs sm:text-sm lg:text-[16px] text-gray1">
+                                        06
+                                    </span>
+
+                                    <div class="flex min-w-0 items-center gap-2 sm:gap-3">
+                                        <img src="./img/playlist/title6.png" alt="Love Hurts"
+                                            class="shrink-0 max-w-full object-contain">
+
+                                        <p class="truncate py-2 font-medium text-sm sm:text-base lg:text-lg xl:text-xl">
+                                            Love Hurts
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="flex w-1/2 min-w-0 items-center justify-between gap-2">
+                                    <p
+                                        class="truncate py-2 text-xs sm:text-sm lg:text-[15px] xl:text-[16px] text-gray1">
+                                        Mick Jagger
+                                    </p>
+
+                                    <p
+                                        class="shrink-0 py-2 text-xs sm:text-sm lg:text-[15px] xl:text-[16px] text-gray1">
+                                        4:45
+                                    </p>
+                                </div>
+                            </div>
+
+
+                            <!-- Track 07 -->
+                            <div class="mb-1 flex w-full items-center py-2 hover:bg-green1">
+                                <div class="flex w-1/2 min-w-0 items-center gap-2 sm:gap-3">
+                                    <span
+                                        class="shrink-0 pl-1 sm:pl-2 lg:pl-4 font-manrope font-medium text-xs sm:text-sm lg:text-[16px] text-gray1">
+                                        07
+                                    </span>
+
+                                    <div class="flex min-w-0 items-center gap-2 sm:gap-3">
+                                        <img src="./img/playlist/title7.png" alt="Stupid Girl"
+                                            class="shrink-0 max-w-full object-contain">
+
+                                        <p class="truncate py-2 font-medium text-sm sm:text-base lg:text-lg xl:text-xl">
+                                            Stupid Girl
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="flex w-1/2 min-w-0 items-center justify-between gap-2">
+                                    <p
+                                        class="truncate py-2 text-xs sm:text-sm lg:text-[15px] xl:text-[16px] text-gray1">
+                                        David Bowie
+                                    </p>
+
+                                    <p
+                                        class="shrink-0 py-2 text-xs sm:text-sm lg:text-[15px] xl:text-[16px] text-gray1">
+                                        2:45
+                                    </p>
+                                </div>
+                            </div>
+
+
+                            <!-- Track 08 -->
+                            <div class="mb-1 flex w-full items-center py-2 hover:bg-green1">
+                                <div class="flex w-1/2 min-w-0 items-center gap-2 sm:gap-3">
+                                    <span
+                                        class="shrink-0 pl-1 sm:pl-2 lg:pl-4 font-manrope font-medium text-xs sm:text-sm lg:text-[16px] text-gray1">
+                                        08
+                                    </span>
+
+                                    <div class="flex min-w-0 items-center gap-2 sm:gap-3">
+                                        <img src="./img/playlist/title8.png" alt="It Ain't Over"
+                                            class="shrink-0 max-w-full object-contain">
+
+                                        <p class="truncate py-2 font-medium text-sm sm:text-base lg:text-lg xl:text-xl">
+                                            It Ain't Over
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="flex w-1/2 min-w-0 items-center justify-between gap-2">
+                                    <p
+                                        class="truncate py-2 text-xs sm:text-sm lg:text-[15px] xl:text-[16px] text-gray1">
+                                        Amy Winehouse
+                                    </p>
+
+                                    <p
+                                        class="shrink-0 py-2 text-xs sm:text-sm lg:text-[15px] xl:text-[16px] text-gray1">
+                                        1:45
+                                    </p>
+                                </div>
+                            </div>
+
+
+                            <!-- Track 09 -->
+                            <div class="mb-1 flex w-full items-center py-2 hover:bg-green1">
+                                <div class="flex w-1/2 min-w-0 items-center gap-2 sm:gap-3">
+                                    <span
+                                        class="shrink-0 pl-1 sm:pl-2 lg:pl-4 font-manrope font-medium text-xs sm:text-sm lg:text-[16px] text-gray1">
+                                        09
+                                    </span>
+
+                                    <div class="flex min-w-0 items-center gap-2 sm:gap-3">
+                                        <img src="./img/playlist/title9.png" alt="Set Fire To The Rain"
+                                            class="shrink-0 max-w-full object-contain">
+
+                                        <p class="truncate py-2 font-medium text-sm sm:text-base lg:text-lg xl:text-xl">
+                                            Set Fire To The Rain
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="flex w-1/2 min-w-0 items-center justify-between gap-2">
+                                    <p
+                                        class="truncate py-2 text-xs sm:text-sm lg:text-[15px] xl:text-[16px] text-gray1">
+                                        Adele
+                                    </p>
+
+                                    <p
+                                        class="shrink-0 py-2 text-xs sm:text-sm lg:text-[15px] xl:text-[16px] text-gray1">
+                                        3:50
+                                    </p>
+                                </div>
+                            </div>
+
+
+                            <!-- Track 10 -->
+                            <div class=" flex w-full items-center py-2 hover:bg-green1">
+                                <div class="flex w-1/2 min-w-0 items-center gap-2 sm:gap-3">
+                                    <span
+                                        class="shrink-0 pl-1 sm:pl-2 lg:pl-4 font-manrope font-medium text-xs sm:text-sm lg:text-[16px] text-gray1">
+                                        10
+                                    </span>
+
+                                    <div class="flex min-w-0 items-center gap-2 sm:gap-3">
+                                        <img src="./img/playlist/title10.png" alt="You Are Mine"
+                                            class="shrink-0 max-w-full object-contain">
+
+                                        <p class="truncate py-2 font-medium text-sm sm:text-base lg:text-lg xl:text-xl">
+                                            You Are Mine
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="flex w-1/2 min-w-0 items-center justify-between gap-2">
+                                    <p
+                                        class="truncate py-2 text-xs sm:text-sm lg:text-[15px] xl:text-[16px] text-gray1">
+                                        Adele
+                                    </p>
+
+                                    <p
+                                        class="shrink-0 py-2 text-xs sm:text-sm lg:text-[15px] xl:text-[16px] text-gray1">
+                                        3:50
+                                    </p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                    <!-- Similar Albums -->
+                    <div class="w-full xl:w-1/2">
+
+                        <div class="mb-5 sm:mb-6">
+                            <h3 class="text-xl sm:text-2xl font-medium">
+                                Similar Albums
+                            </h3>
+                        </div>
+
+
+                        <div class="mb-8 sm:mb-12">
+
+                            <!-- Similar 1 -->
+                            <div class="p-2 mb-4 sm:mb-6 hover:bg-green1">
+                                <div class="flex items-center gap-3 sm:gap-4">
+
+                                    <div class="shrink-0">
+                                        <img src="./img/playlist/similar1.png" alt="Ultra Violet"
+                                            class="max-w-full object-contain">
+                                    </div>
+
+                                    <div class="min-w-0">
+                                        <h4 class="mb-1 sm:mb-2 truncate font-medium text-base sm:text-lg xl:text-xl">
+                                            Ulrta Violet
+                                        </h4>
+
+                                        <p class="truncate text-sm sm:text-[15px] lg:text-[16px] text-gray1">
+                                            Chromatica Duo
+                                        </p>
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+                            <!-- Similar 2 -->
+                            <div class="p-2 mb-4 sm:mb-6 hover:bg-green1">
+                                <div class="flex items-center gap-3 sm:gap-4">
+
+                                    <div class="shrink-0">
+                                        <img src="./img/playlist/similar2.png" alt="Mysterious Climax"
+                                            class="max-w-full object-contain">
+                                    </div>
+
+                                    <div class="min-w-0">
+                                        <h4 class="mb-1 sm:mb-2 truncate font-medium text-base sm:text-lg xl:text-xl">
+                                            Mysterious Climax
+                                        </h4>
+
+                                        <p class="truncate text-sm sm:text-[15px] lg:text-[16px] text-gray1">
+                                            Lady Gaga
+                                        </p>
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+                            <!-- Similar 3 -->
+                            <div class="p-2 mb-4 sm:mb-6 hover:bg-green1">
+                                <div class="flex items-center gap-3 sm:gap-4">
+
+                                    <div class="shrink-0">
+                                        <img src="./img/playlist/similar3.png" alt="Brave Noise"
+                                            class="max-w-full object-contain">
+                                    </div>
+
+                                    <div class="min-w-0">
+                                        <h4 class="mb-1 sm:mb-2 truncate font-medium text-base sm:text-lg xl:text-xl">
+                                            Brave Noise
+                                        </h4>
+
+                                        <p class="truncate text-sm sm:text-[15px] lg:text-[16px] text-gray1">
+                                            George Ezra
+                                        </p>
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+                            <!-- Similar 4 -->
+                            <div class="p-2 mb-4 sm:mb-6 hover:bg-green1">
+                                <div class="flex items-center gap-3 sm:gap-4">
+
+                                    <div class="shrink-0">
+                                        <img src="./img/playlist/similar4.png" alt="Time For Lines"
+                                            class="max-w-full object-contain">
+                                    </div>
+
+                                    <div class="min-w-0">
+                                        <h4 class="mb-1 sm:mb-2 truncate font-medium text-base sm:text-lg xl:text-xl">
+                                            Time For Lines
+                                        </h4>
+
+                                        <p class="truncate text-sm sm:text-[15px] lg:text-[16px] text-gray1">
+                                            Mick Jagger
+                                        </p>
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+                            <!-- Similar 5 -->
+                            <div class="p-2 mb-4 sm:mb-6 hover:bg-green1">
+                                <div class="flex items-center gap-3 sm:gap-4">
+
+                                    <div class="shrink-0">
+                                        <img src="./img/playlist/similar5.png" alt="Repeate Your Ocean"
+                                            class="max-w-full object-contain">
+                                    </div>
+
+                                    <div class="min-w-0">
+                                        <h4 class="mb-1 sm:mb-2 truncate font-medium text-base sm:text-lg xl:text-xl">
+                                            Repeate Your Ocean
+                                        </h4>
+
+                                        <p class="truncate text-sm sm:text-[15px] lg:text-[16px] text-gray1">
+                                            Adele
+                                        </p>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                        <!-- Upgrade Card -->
+                        <div
+                            class="rounded-xl sm:rounded-2xl bg-[radial-gradient(ellipse_at_top_right,_#005F26_0%,_#131313_35%)] p-4 sm:p-5 lg:p-6 ">
+
+                            <p class="mb-1 sm:mb-2 font-semibold text-green text-xs sm:text-sm">
+                                Auralis
+                            </p>
+
+                            <p
+                                class="pb-3 sm:pb-4 text-sm sm:text-[15px] lg:text-[16px] tracking-[1px] sm:tracking-[2px] text-gray1">
+                                Enhance your listening with high-fidelity lossless audio and spatial 3D sound.
+                            </p>
+
+                            <button
+                                class="w-full rounded-lg sm:rounded-xl border border-green1 bg-black3 py-2 text-sm sm:text-base font-medium transition hover:bg-green1">
+                                Upgrade Plan
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <section class=" mb-12">
+            <div class="container bg-black1">
+                <div class="px-[24px] py-[20px] flex items-center justify-between">
+
+                    <!-- Play song name -->
+                    <div class="flex items-center gap-4">
+                        <img src="./img/playlist/playsong.png" alt="Play song image">
+
+                        <h3>Midnight City</h3>
+
+                        <i class="fa-solid fa-heart" style="color: rgb(93, 236, 128);"></i>
+                    </div>
+
+                    <!-- Progress wrapper -->
+                    <div class="flex flex-col items-center gap-2 mb-2">
+
+                        <!-- Song controls -->
+                        <div class="flex items-center gap-4">
+                            <button aria-label="Shuffle">
+                                <img src="./img/playlist/play1.png" alt="Shuffle">
+                            </button>
+
+                            <button aria-label="Previous">
+                                <img src="./img/playlist/play2.png" alt="Previous">
+                            </button>
+
+                            <button class="main-play" id="mainPlay" aria-label="Play">
+                                <img src="./img/playlist/play3.png" alt="Play">
+                            </button>
+
+                            <button aria-label="Next">
+                                <img src="./img/playlist/play4.png" alt="Next">
+                            </button>
+
+                            <button aria-label="Repeat">
+                                <img src="./img/playlist/play5.png" alt="Repeat">
+                            </button>
+                        </div>
+
+                        <!-- Desktop progress -->
+                        <div class="hidden min-w-0 flex-[1.4] items-center gap-2 md:flex">
+                            <span id="currentTime" class=" text-right text-[14px] text-gray1">
+                                0:00
+                            </span>
+
+                            <input id="progressRange" type="range" min="0" max="100" value="0" step="0.1"
+                                aria-label="Music progress" class="h-1 w-full cursor-pointer accent-white">
+
+                            <span id="durationTime" class=" text-[14px] text-gray1">
+                                4:03
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Player tools -->
+                    <div class="flex items-center gap-4">
+
+                        <button aria-label="Volume down">
+                            <img src="./img/playlist/volum1.png" alt="Volume down">
+                        </button>
+
+                        <button aria-label="Mute">
+                            <img src="./img/playlist/volum2.png" alt="Mute">
+                        </button>
+
+                        <button class="mr-2" aria-label="Volume">
+                            <img src="./img/playlist/volum3.png" alt="Volume">
+                        </button>
+
+                        <input id="volumeRange" type="range" min="0" max="100" value="60" step="1" aria-label="Volume"
+                            class="hidden h-1 w-16 cursor-pointer accent-white lg:block">
+
+                        <button aria-label="Fullscreen">
+                            <img src="./img/playlist/volum4.png" alt="Fullscreen">
+                        </button>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+    <!-- ================= FOOTER c ================= -->
+    <footer class="border-y border-white/[0.05] bg-black4 text-white">
+        <div class=" mx-auto px-4">
+
+            <!-- Links section (Grid layout for seamless responsiveness) -->
+            <div class="grid grid-cols-1 gap-8 py-12 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+
+                <!-- Brand Section -->
+                <div class="flex flex-col gap-4">
+                    <a href="#" class="flex items-center gap-2">
+                        <img src="./img/home/logo.png" alt="logo" class="h-8 w-auto">
+                        <span class="font-inter text-2xl font-bold text-green2">Auralis</span>
+                    </a>
+                    <p class="font-roboto max-w-[260px] text-base text-gray1 leading-relaxed">
+                        Discover millions of songs and podcasts from your favorite artists. Curated playlists for every
+                        mood and moment.
+                    </p>
+                </div>
+
+                <!-- Company Section -->
+                <div>
+                    <p class="font-inter text-lg font-bold mb-4 tracking-wider">COMPANY</p>
+                    <ul class="font-roboto flex flex-col gap-3 text-base text-gray1">
+                        <li><a href="#" class="transition hover:text-white">About</a></li>
+                        <li><a href="#" class="transition hover:text-white">Jobs</a></li>
+                        <li><a href="#" class="transition hover:text-white">For the Record</a></li>
+                    </ul>
+                </div>
+
+                <!-- Support Section -->
+                <div>
+                    <p class="font-inter text-lg font-bold mb-4 tracking-wider">SUPPORT</p>
+                    <ul class="font-roboto flex flex-col gap-3 text-base text-gray1">
+                        <li><a href="#" class="transition hover:text-white">Help Center</a></li>
+                        <li><a href="#" class="transition hover:text-white">Privacy Policy</a></li>
+                        <li><a href="#" class="transition hover:text-white">Terms of Service</a></li>
+                    </ul>
+                </div>
+
+                <!-- Social Section -->
+                <div>
+                    <p class="font-inter text-lg font-bold mb-4 tracking-wider">SOCIAL</p>
+                    <ul class="flex gap-4 items-center">
+                        <li>
+                            <a href="#" aria-label="Website" class="opacity-80 hover:opacity-100 transition">
+                                <img src="./img/home/share.png" alt="website">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" aria-label="Facebook" class="opacity-80 hover:opacity-100 transition">
+                                <img src="./img/home/facebook.png" alt="facebook">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" aria-label="Instagram" class="opacity-80 hover:opacity-100 transition">
+                                <img src="./img/home/instagrame.png" alt="instagram">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" aria-label="X" class="opacity-80 hover:opacity-100 transition">
+                                <img src="./img/home/twitter.png" alt="twitter">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- Footer Bottom Section -->
+            <div
+                class="border-t border-white/[0.05] py-6 flex flex-col gap-4 items-center text-center sm:flex-row sm:justify-between sm:text-left">
+                <p class="font-roboto text-sm text-gray1">
+                    &copy; 2026 <a href="#" class="hover:underline">Auralis</a> Inc.
+                </p>
+                <ul class="font-roboto flex flex-wrap justify-center gap-6 text-sm text-gray1">
+                    <li><a href="#" class="transition hover:text-white">Legal</a></li>
+                    <li><a href="#" class="transition hover:text-white">Safety</a></li>
+                    <li><a href="#" class="transition hover:text-white">Cookies</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script src="./js/script.js"></script>
+
+</body>
+
+</html>

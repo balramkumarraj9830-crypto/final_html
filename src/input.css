@@ -1,0 +1,215 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+
+
+@theme {
+    --font-inter: "Inter", sans-serif;
+    --font-roboto: "Roboto", sans-serif;
+    --font-manrope: "Manrope", sans-serif;
+
+    --color-gray1: #ADAAAA;
+    --color-black1: #131313;
+    --color-black3: #262626;
+    --color-black2: #0E0E0E;
+    --color-pramiry: #1A1A1A;
+    --color-black4: #080808;
+    --color-black5: #;
+    --color-green: #72FE8F;
+    --color-green1: #005F26;
+    --color-green2: #1DB954;
+
+    --color-green3: #63EF82;
+    --color-gray3: #484847;
+    --color-gray4: #262626;
+    --color-gray5: #6B7280;
+    --color-gray6: #767575;
+    --color-gray: #;
+    --color-gray: #;
+    --color-gray: #;
+
+
+}
+
+/* modification of predefined class */
+@utility container {
+    max-width: 1820px;
+    width: 90%;
+    @apply m-auto px-6;
+
+
+}
+
+/* changes in element */
+@layer base {
+
+    html,
+    body {
+        overflow-x: hidden;
+        width: 100%;
+        scroll-behavior: smooth;
+        
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    /* ::-webkit-scrollbar {
+        width: 7px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: #0b0b0b;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: #333;
+        border-radius: 20px;
+    }
+
+    .hero-stage {
+        perspective: 1200px;
+    }
+
+    .hero-card {
+        transition:
+            transform .5s ease,
+            opacity .5s ease,
+            filter .5s ease;
+    }
+
+    .hero-card:hover {
+        transform: translateY(-8px) scale(1.02) !important;
+        filter: brightness(1.1);
+        z-index: 10;
+    }
+
+    .music-card {
+        transition: transform .25s ease, background .25s ease;
+    }
+
+    .music-card:hover {
+        transform: translateY(-5px);
+        background: #1b1b1b;
+    }
+
+    .album-image {
+        transition: transform .35s ease;
+    }
+
+    .music-card:hover .album-image {
+        transform: scale(1.04);
+    }
+
+    .play-overlay {
+        opacity: 0;
+        transition: opacity .25s ease;
+    }
+
+    .music-card:hover .play-overlay {
+        opacity: 1;
+    }
+
+    .genre {
+        transition: transform .25s ease, filter .25s ease;
+    }
+
+    .genre:hover {
+        transform: translateY(-3px);
+        filter: brightness(1.12);
+    }
+
+    .hero-slide {
+        display: none;
+    }
+
+    .hero-slide.active {
+        display: block;
+    }
+
+    .mobile-menu {
+        transform: translateY(-15px);
+        opacity: 0;
+        pointer-events: none;
+        transition: all .25s ease;
+    }
+
+    .mobile-menu.open {
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    .line-clamp-1 {
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    .line-clamp-2 {
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    } */
+
+}
+
+@layer components {
+
+    .row {
+        @apply flex flex-wrap;
+
+    }
+
+    .col {
+        @apply px-3 py-3 mb-6;
+    }
+
+    .infinite-carousel-wrapper {
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .infinite-carousel {
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .infinite-carousel-track {
+        display: flex;
+        flex-wrap: nowrap;
+        width: max-content;
+        gap: 20px;
+        padding: 16px 0;
+        margin: 0;
+        list-style: none;
+        will-change: transform;
+    }
+
+    .infinite-carousel-track li {
+        flex: 0 0 auto;
+        margin: 0;
+        padding: 0;
+    }
+
+    .infinite-carousel-track img {
+        display: block;
+        width: auto;
+        max-width: none;
+        height: auto;
+    }
+
+    /* Mobile */
+   
+
+    }
+    

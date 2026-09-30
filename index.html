@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auralis — Feel Every Beat</title>
+
+    <!-- --febicon -- -->
+    <link rel="shortcut icon" href="./favicon/favicon.ico" type="image/x-icon">
+
+    <!-- ----swiper ka CDN--- -->
+
+    <link href="https://cdn.jsdelivr.net/npm/swiffy-slider@2.1.0/dist/css/swiffy-slider.css" rel="stylesheet"
+        crossorigin="anonymous">
+
+    <!-- Tailwind css v4 Brower  -->
+    <link rel="stylesheet" href="./output/style.css">
+
+
+    <!-- --font osum cdn link --- -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css"
+        integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+
+</head>
+
+<body class="bg-black2 text-white font-inter">
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header id="mainHeader"
+        class="fixed left-0 top-0 z-[9999] w-full border-b border-white/[0.05] bg-[#101010]/90 py-4 backdrop-blur-xl">
+
+        <div class="mx-auto flex w-full items-center justify-between px-5 lg:px-8">
+
+            <!-- =================================================
+                 LOGO
+            ================================================== -->
+
+            <a href="#" class="flex shrink-0 items-center gap-3 sm:gap-[23px]">
+
+                <img src="./img/home/logo.png" alt="Auralis logo" class=" sm:h-10">
+
+                <span class="font-inter text-2xl font-bold tracking-tight text-green2 sm:text-[40px]">
+                    Auralis
+                </span>
+            </a>
+            <!-- =================================================
+                 DESKTOP NAVIGATION
+            ================================================== -->
+
+            <nav class="hidden lg:block">
+                <ul class="flex items-center justify-between gap-8">
+
+                    <li>
+                        <a href="index.html" class="font-bold text-green2 transition hover:text-green2">
+                            Home
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="explore.html" class="text-white transition hover:text-green2">
+                            Explore
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="playlists.html" class="text-white transition hover:text-green2">
+                            Playlists
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="library.html" class="text-white transition hover:text-green2">
+                            Library
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="premium.html" class="text-white transition hover:text-green2">
+                            Premium
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- =================================================
+                 DESKTOP RIGHT SIDE
+            ================================================== -->
+            <div class="hidden items-center gap-4 lg:flex">
+
+                <!-- Search -->
+                <div class="relative w-full max-w-[320px] xl:w-[462px]">
+                    <div class="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-white opacity-60">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                    <input id="searchInput" type="text" placeholder="Search artists, songs, albums"
+                        class="w-full rounded-full border border-transparent bg-gray4 py-3 pl-11 pr-4 text-xs text-white outline-none placeholder:text-gray6 transition focus:border-green2/30">
+                </div>
+                <!-- Notification -->
+
+                <button type="button" class="shrink-0 border-r border-gray3 pr-4 text-gray1 transition hover:text-white"
+                    title="Notifications" aria-label="Notifications">
+                    <i class="fa-regular fa-bell"></i>
+                </button>
+                <!-- Profile -->
+                <button type="button" class="shrink-0" aria-label="Profile">
+                    <img src="./img/home/profile_img.png" alt="Profile" class=" object-cover">
+                </button>
+            </div>
+
+
+            <!-- =================================================
+                 MOBILE MENU BUTTON
+            ================================================== -->
+
+            <button id="menuBtn" type="button"
+                class="rounded-lg bg-white/5 p-2 text-xl text-white transition hover:bg-white/10 lg:hidden"
+                aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+
+                <i id="menuIcon" class="fa-solid fa-bars">
+                </i>
+            </button>
+        </div>
+
+
+        <!-- =====================================================
+             MOBILE MENU
+        ====================================================== -->
+
+        <div id="mobileMenu"
+            class="absolute left-0 right-0 top-full hidden border-b border-white/10 bg-[#101010]/95 p-5 shadow-2xl backdrop-blur-2xl lg:hidden">
+
+            <div class="flex flex-col gap-5">
+                <!-- Mobile Search -->
+                <div class="relative w-full">
+                    <div class="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-white opacity-60">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                    <input id="mobileSearchInput" type="text" placeholder="Search artists, songs, albums"
+                        class="h-10 w-full rounded-full bg-[#242424] pl-11 pr-4 text-sm text-white outline-none focus:border focus:border-green2/40">
+                </div>
+                <!-- Mobile Links -->
+
+                <a href="index.html" class="border-b border-white/5 py-1 text-green2 font-semibold ">
+                    Home
+                </a>
+                <a href="explore.html" class="border-b border-white/5 py-1 transition hover:text-white">
+                    Explore
+                </a>
+                <a href="playlists.html" class="border-b border-white/5 py-1 text-gray-300 transition hover:text-white">
+                    Playlists
+                </a>
+                <a href="library.html" class="border-b border-white/5 py-1 text-gray-300 transition hover:text-white">
+                    Library
+                </a>
+
+                <a href="premium.html" class="py-1 text-gray-300 transition hover:text-white">
+                    Premium
+                </a>
+            </div>
+        </div>
+    </header>
+
+
+    <main class="pt-[179px]">
+
+        <!-- banner part -->
+
+        <section class="w-full px-4  overflow-y-auto">
+            <div class="w-full">
+
+                <!-- Heading -->
+                <div class="max-w-[738px] mx-auto text-center">
+                    <h1 class="font-extrabold text-[64px] leading-[1.4] tracking-[-2.4px]">
+                        Feel Every <span class="text-green">Beat. Stream</span>
+                        Without Limits.
+                    </h1>
+                </div>
+
+
+                <!-- Infinite Carousel -->
+                <div class="infinite-carousel-wrapper mt-8">
+
+                    <div class="infinite-carousel" id="infiniteCarousel">
+
+                        <ul class="infinite-carousel-track" id="slider2">
+
+                            <!-- Original Set -->
+                            <li>
+                                <img src="./img/home/banner1.png" alt="banner 1">
+                            </li>
+
+                            <li>
+                                <img src="./img/home/banner2.png" alt="banner 2">
+                            </li>
+
+                            <li>
+                                <img src="./img/home/banner3.png" alt="banner 3">
+                            </li>
+
+                            <li>
+                                <img src="./img/home/banner4.png" alt="banner 4">
+                            </li>
+
+                            <li>
+                                <img src="./img/home/banner5.png" alt="banner 5">
+                            </li>
+
+                            <li>
+                                <img src="./img/home/banner6.png" alt="banner 6">
+                            </li>
+
+                            <li>
+                                <img src="./img/home/banner7.png" alt="banner 7">
+                            </li>
+
+                            <li>
+                                <img src="./img/home/banner8.png" alt="banner 8">
+                            </li>
+
+                            <li>
+                                <img src="./img/home/banner9.png" alt="banner 9">
+                            </li>
+
+                            <li>
+                                <img src="./img/home/banner10.png" alt="banner 10">
+                            </li>
+
+                            <li>
+                                <img src="./img/home/banner11.png" alt="banner 11">
+                            </li>
+
+                            <li>
+                                <img src="./img/home/banner12.png" alt="banner 12">
+                            </li>
+
+                            <li>
+                                <img src="./img/home/banner13.png" alt="banner 13">
+                            </li>
+
+                            <li>
+                                <img src="./img/home/banner14.png" alt="banner 14">
+                            </li>
+
+
+                            <!-- Duplicate Set -->
+                            <li>
+                                <img src="./img/home/banner1.png" alt="banner 1">
+                            </li>
+
+                            <li>
+                                <img src="./img/home/banner2.png" alt="banner 2">
+                            </li>
+
+                            <li>
+                                <img src="./img/home/banner3.png" alt="banner 3">
+                            </li>
+
+                            <li>
+                                <img src="./img/home/banner4.png" alt="banner 4">
+                            </li>
+
+                            <li>
+                                <img src="./img/home/banner5.png" alt="banner 5">
+                            </li>
+
+                            <li>
+                                <img src="./img/home/banner6.png" alt="banner 6">
+                            </li>
+
+                            <li>
+                                <img src="./img/home/banner7.png" alt="banner 7">
+                            </li>
+
+                            <li>
+                                <img src="./img/home/banner8.png" alt="banner 8">
+                            </li>
+
+                            <li>
+                                <img src="./img/home/banner9.png" alt="banner 9">
+                            </li>
+
+                            <li>
+                                <img src="./img/home/banner10.png" alt="banner 10">
+                            </li>
+
+                            <li>
+                                <img src="./img/home/banner11.png" alt="banner 11">
+                            </li>
+
+                            <li>
+                                <img src="./img/home/banner12.png" alt="banner 12">
+                            </li>
+
+                            <li>
+                                <img src="./img/home/banner13.png" alt="banner 13">
+                            </li>
+
+                            <li>
+                                <img src="./img/home/banner14.png" alt="banner 14">
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Description & Buttons -->
+                <div class="max-w-[471px] mx-auto text-center mt-6">
+
+                    <div class="mb-6">
+                        <p class="font-roboto text-xl leading-[32.5px]">
+                            Discover millions of songs, curated playlists, and artists you love — all in one place.
+                        </p>
+                    </div>
+
+
+                    <!-- Buttons -->
+                    <div class="flex gap-4 justify-center">
+
+                        <a href="#"
+                            class="bg-green flex hover:bg-black3 text-green1 text-[16px] rounded-[12px] px-[40px] py-[16px] font-bold items-center gap-2">
+
+                            <img src="./img/home/Icon.png" alt="play icon">
+
+                            <span>Play Now</span>
+
+                        </a>
+
+
+                        <a href="#"
+                            class="border border-green1 bg-black1 font-bold text-[16px] rounded-[12px] px-[40px] py-[16px] hover:bg-black">
+
+                            <span>View Album</span>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+
+
+        <!-- ================= TRENDING MUSIC ================= -->
+
+        <section id="trending">
+            <div class="container">
+                <div class="mb-8">
+                    <h2 class="text-[30px] font-bold text-white">Trending Music</h2>
+                    <p class="mt-2 text-sm text-gray-500">
+                        The latest albums and singles from around the globe.
+                    </p>
+                </div>
+                <div class="row">
+
+                    <div class="col sm:w-1/3 md:w-1/4 lg:w-1/7">
+                        <div class="">
+                            <img src="./img/home/tranding1.png" alt="tranding 1" class="">
+                        </div>
+                        <h3 class="mb-2 mt-6 line-clamp-1 text-[20px] font-inter font-semibold text-white">Jaiye Sajana
+                        </h3>
+                        <p class=" text-gray1 text-[16px] font-inter font-semibold">Sajawat Sachdev</p>
+                    </div>
+                    <div class="col sm:w-1/3 md:w-1/4 lg:w-1/7">
+                        <div class="">
+                            <img src="./img/home/tranding2.png" alt="tranding 2">
+                        </div>
+                        <h3 class="mb-2 mt-6 line-clamp-1 text-[20px] font-inter font-semibold text-white">Sitaare
+                        </h3>
+                        <p class=" text-gray1 text-[16px] font-inter font-semibold">Arijit Singh</p>
+                    </div>
+                    <div class="col sm:w-1/3 md:w-1/4 lg:w-1/7">
+                        <div class="">
+                            <img src="./img/home/tranding3.png" alt="tranding 3">
+                        </div>
+                        <h3 class="mb-2 mt-6 line-clamp-1 text-[20px] font-inter font-semibold text-white">Chand dekh
+                            lena
+                        </h3>
+                        <p class=" text-gray1 text-[16px] font-inter font-semibold">Himesh Reshmiya</p>
+                    </div>
+                    <div class="col sm:w-1/3 md:w-1/4 lg:w-1/7">
+                        <div class="">
+                            <img src="./img/home/tranding4.png" alt="tranding 4">
+                        </div>
+                        <h3 class="mb-2 mt-6 line-clamp-1 text-[20px] font-inter font-semibold text-white">khat
+                        </h3>
+                        <p class=" text-gray1 text-[16px] font-inter font-semibold">Navjot Ahuja</p>
+                    </div>
+                    <div class="col sm:w-1/3 md:w-1/4 lg:w-1/7">
+                        <div class="">
+                            <img src="./img/home/tranding5.png" alt="tranding 5">
+                        </div>
+                        <h3 class="mb-2 mt-6 line-clamp-1 text-[20px] font-inter font-semibold text-white">In the dark
+                        </h3>
+                        <p class=" text-gray1 text-[16px] font-inter font-semibold">Selena GomeZ</p>
+                    </div>
+                    <div class="col sm:w-1/3 md:w-1/4 lg:w-1/7">
+                        <div class="">
+                            <img src="./img/home/tranding6.png" alt="tranding 6">
+                        </div>
+                        <h3 class="mb-2 mt-6 line-clamp-1 text-[20px] font-inter font-semibold text-white">Ophalia
+                        </h3>
+                        <p class=" text-gray1 text-[16px] font-inter font-semibold">Taylor Swift</p>
+                    </div>
+                    <div class="col sm:w-1/3 md:w-1/4 lg:w-1/7">
+                        <div class="">
+                            <img src="./img/home/tranding7.png" alt="tranding 7">
+                        </div>
+                        <h3 class="mb-2 mt-6 line-clamp-1 text-[20px] font-inter font-semibold text-white">SWAG
+                        </h3>
+                        <p class=" text-gray1 text-[16px] font-inter font-semibold">Justin Bieber</p>
+                    </div>
+
+                </div>
+
+
+            </div>
+        </section>
+        <!-- ================= NEW RELEASES ================= -->
+        <section id="library">
+            <div class="container">
+                <div class="mb-8">
+                    <h2 class="text-[30px] font-bold font-inter text-white">New Releases</h2>
+                    <p class="mt-2 text-[20px] text-gray1">
+                        The latest albums and singles from around the globe.
+                    </p>
+                </div>
+
+                <div class="row">
+
+                    <div class="col sm:w-1/2 md:w-1/3 lg:w-1/6">
+                        <div class="bg-black1 rounded-xl p-6 hover:bg-gray-800">
+                            <img src="./img/home/new_release1.png" alt="new release 1">
+
+                            <div>
+                                <h3 class=" text-2xl font-inter font-semibold text-white">
+                                    Wildfire
+                                </h3>
+                                <p class="text-[16px] font-roboto text-gray1">
+                                    Canyon Echoes
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="col sm:w-1/2 md:w-1/3 lg:w-1/6">
+                        <div class="bg-black1 rounded-xl p-6 hover:bg-gray-800">
+                            <img src="./img/home/new_release2.png" alt="new release 2">
+
+                            <div>
+                                <h3 class=" text-2xl font-inter font-semibold text-white">
+                                    City Lights
+                                </h3>
+                                <p class="text-[16px] font-roboto text-gray1">
+                                    Metropolis
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="col sm:w-1/2 md:w-1/3 lg:w-1/6">
+                        <div class="bg-black1 rounded-xl p-6 hover:bg-gray-800">
+                            <img src="./img/home/new_release3.png" alt="new release 3">
+
+                            <div>
+                                <h3 class=" text-2xl font-inter font-semibold text-white">
+                                    Lovescape
+                                </h3>
+                                <p class="text-[16px] font-roboto text-gray1">
+                                    Ellie Goulding
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="col sm:w-1/2 md:w-1/3 lg:w-1/6">
+                        <div class="bg-black1 rounded-xl p-6 hover:bg-gray-800">
+                            <img src="./img/home/new_release4.png" alt="new release 4">
+
+                            <div>
+                                <h3 class=" text-2xl font-inter font-semibold text-white">
+                                    Let me choose
+                                </h3>
+                                <p class="text-[16px] font-roboto text-gray1">
+                                    Bruno Mars
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="col sm:w-1/2 md:w-1/3 lg:w-1/6">
+                        <div class="bg-black1 rounded-xl p-6 hover:bg-gray-800">
+                            <img src="./img/home/new_release5.png" alt="new release 5">
+
+                            <div>
+                                <h3 class=" text-2xl font-inter font-semibold text-white">
+                                    In the dark
+                                </h3>
+                                <p class="text-[16px] font-roboto text-gray1">
+                                    Selena Ghmez
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="col sm:w-1/2 md:w-1/3 lg:w-1/6">
+                        <div class="bg-black1 rounded-xl p-6 hover:bg-gray-800">
+                            <img src="./img/home/new_release6.png" alt="new release 6">
+
+                            <div>
+                                <h3 class=" text-2xl font-inter font-semibold text-white">
+                                    Jab Kisi Ki
+                                </h3>
+                                <p class="text-[16px] font-roboto text-gray1">
+                                    Kumar Sanu
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <!-- ================= CHARTS + MADE FOR YOU ================= -->
+        <section class="text-white py-8">
+            <div class="container mx-auto px-4">
+                <!-- Main Parent: Mobile/Tablet par vertical alignment, Desktop (lg) par side-by-side -->
+                <div class="flex flex-col lg:flex-row gap-6">
+
+                    <!-- Left Side: Top Charts (sm aur md par full width, lg par 1/3 width) -->
+                    <div class="w-full lg:w-1/3">
+                        <div class="rounded-[16px] bg-black1 p-4">
+                            <h2 class="mb-6 text-lg font-bold">Top Charts</h2>
+
+                            <!-- Item 1 -->
+                            <div class="flex items-center mb-3 p-3 hover:bg-green1 hover:-translate-y-2">
+                                <span class="text-gray1 w-4 text-center">1</span>
+                                <img src="./img/home/top_chart1.png" alt="top image 1" class="mx-4 flex-shrink-0">
+                                <div>
+                                    <h3 class="text-white text-sm font-semibold mb-1 font-inter">Wildfire</h3>
+                                    <p class="text-xs text-gray1 font-roboto">Canyon Echoes</p>
+                                </div>
+                            </div>
+
+                            <!-- Item 2 -->
+                            <div class="flex items-center mb-3 p-3 hover:bg-green1 hover:-translate-y-2">
+                                <span class="text-gray1 w-4 text-center">2</span>
+                                <img src="./img/home/top_charts2.png" alt="top image 2" class="mx-4 flex-shrink-0">
+                                <div>
+                                    <h3 class="text-white text-sm font-semibold mb-1 font-inter">City Lights</h3>
+                                    <p class="text-xs text-gray1 font-roboto">Metropolis</p>
+                                </div>
+                            </div>
+
+                            <!-- Item 3 -->
+                            <div class="flex items-center p-3 hover:bg-green1 hover:-translate-y-2">
+                                <span class="text-gray1 w-4 text-center">3</span>
+                                <img src="./img/home/top_charts3.png" alt="top image 3" class="mx-4 flex-shrink-0">
+                                <div>
+                                    <h3 class="text-white text-sm font-semibold mb-1 font-inter">Deep Blue</h3>
+                                    <p class="text-xs text-gray1 font-roboto">Oceanic</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Side: Made For You (sm aur md par full width, lg par 2/3 width) -->
+                    <div class="w-full lg:w-2/3">
+                        <div>
+                            <h2 class="mb-6 text-lg font-bold">Made For You</h2>
+                        </div>
+
+                        <!-- Cards Container: Flex wrap lagaya hai jo cards ko automatically next line me break karega -->
+                        <div class="flex flex-wrap gap-6">
+
+                            <!-- Card 1 (Mobile par Full, Tablet md par Half width - gap margin subtract karke, Desktop lg par 3 columns) -->
+                            <div
+                                class="rounded-[16px] bg-black1 flex gap-4 p-4 w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] hover:bg-green1 hover:-translate-y-2">
+                                <div class="flex-shrink-0"><img src="./img/home/made_for1.png" alt="made img 1"></div>
+                                <div>
+                                    <h3 class="text-white text-sm font-semibold mb-4 font-inter">Daily Max 1</h3>
+                                    <p class="text-xs text-gray1 font-roboto">Based on your recent love for jazz and
+                                        Lo-Fi.</p>
+                                </div>
+                            </div>
+
+                            <!-- Card 2 -->
+                            <div
+                                class="rounded-[16px] bg-black1 flex gap-4 p-4 w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] hover:bg-green1 hover:-translate-y-2">
+                                <div class="flex-shrink-0"><img src="./img/home/made_for2.png" alt="made img 2"></div>
+                                <div>
+                                    <h3 class="text-white text-sm font-semibold mb-4 font-inter">Daily Max 2</h3>
+                                    <p class="text-xs text-gray1 font-roboto">Based on your recent love for pop and
+                                        Beats</p>
+                                </div>
+                            </div>
+
+                            <!-- Card 3 -->
+                            <div
+                                class="rounded-[16px] bg-black1 flex gap-4 p-4 w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] hover:bg-green1 hover:-translate-y-2">
+                                <div class="flex-shrink-0"><img src="./img/home/made_for3.png" alt="made img 3"></div>
+                                <div>
+                                    <h3 class="text-white text-sm font-semibold mb-4 font-inter">Daily Max 3</h3>
+                                    <p class="text-xs text-gray1 font-roboto">Based on your recent love for pop and
+                                        Beats</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= FEATURED PLAYLISTS ================= -->
+        <section>
+            <div class="container">
+                <h2 class="text-[30px] font-bold font-inter text-white mb-8">Featured Playlists</h2>
+                <div class="flex flex-wrap -mx-2">
+
+
+                    <div class="music-card group relative mb-4 w-1/2 px-2 sm:w-1/3 md:w-1/5 hover:-translate-y-2">
+
+                        <img src="./img/home/featured_playlist1.png" alt="Jazz for Study">
+
+                        <div
+                            class="absolute inset-x-2 bottom-0 bg-gradient-to-t from-black via-black/70 to-transparent p-4 pt-14">
+
+                            <h3 class="text-sm font-semibold">
+                                Jazz for Study
+                            </h3>
+
+                            <p class="mt-1 text-xs text-gray-300">
+                                Perfect background rhythms
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="music-card group relative mb-4 w-1/2 px-2 sm:w-1/3 md:w-1/5 hover:-translate-y-2">
+
+                        <img src="./img/home/featured_playlist2.png" class=" w-full " alt="Pop for Study">
+
+                        <div
+                            class="absolute inset-x-2 bottom-0 bg-gradient-to-t from-black via-black/70 to-transparent p-4 pt-14">
+
+                            <h3 class="text-sm font-semibold">
+                                Pop for Study
+                            </h3>
+
+                            <p class="mt-1 text-xs text-gray-300">
+                                Perfect background rhythms
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="music-card group relative mb-4 w-1/2 px-2 sm:w-1/3 md:w-1/5 hover:-translate-y-2">
+
+                        <img src="./img/home/featured_playlist3.png" class="w-full" alt="Top 50 Hits">
+
+                        <div
+                            class="absolute inset-x-2 bottom-0 bg-gradient-to-t from-black via-black/70 to-transparent p-4 pt-14">
+
+                            <h3 class="text-sm font-semibold">
+                                Top 50 Hits
+                            </h3>
+
+                            <p class="mt-1 text-xs text-gray-300">
+                                Perfect blend of music
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="music-card group relative mb-4 w-1/2 px-2 sm:w-1/3 md:w-1/5 hover:-translate-y-2">
+
+                        <img src="./img/home/featured_playlist4.png" class=" w-full" alt="Today's Pick">
+
+                        <div
+                            class="absolute inset-x-2 bottom-0 bg-gradient-to-t from-black via-black/70 to-transparent p-4 pt-14">
+
+                            <h3 class="text-sm font-semibold">
+                                Today's Pick
+                            </h3>
+
+                            <p class="mt-1 text-xs text-gray-300">
+                                Top Hit Numbers
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="music-card group relative mb-4 w-1/2 px-2 sm:w-1/3 md:w-1/5 hover:-translate-y-2">
+
+                        <img src="./img/home/featured_playlist5.png" class=" w-full" alt="Evergreen Tracks">
+
+                        <div
+                            class="absolute inset-x-2 bottom-0 bg-gradient-to-t from-black via-black/70 to-transparent p-4 pt-14">
+
+                            <h3 class="text-sm font-semibold">
+                                Evergreen Tracks
+                            </h3>
+
+                            <p class="mt-1 text-xs text-gray-300">
+                                Indian Pop
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+        <!-- ================= GENRES c ================= -->
+
+        <section class="mb-[72px]">
+            <div class="container mx-auto px-4">
+                <h2 class="text-[30px] font-bold font-inter text-white mb-8">Browse Genres</h2>
+
+                <!-- 1. Yahan flex-wrap aur text-white add kiya hai -->
+                <div class="row gap-6 text-white">
+
+                    <!-- Mobile par: w-[calc(50%-12px)] (2 cards) -->
+                    <!-- Tablet/MD par: md:w-[calc(33.333%-16px)] (3 cards) -->
+                    <!-- Laptop/LG par: lg:w-[calc(16.666%-20px)] (6 cards) -->
+
+                    <button
+                        class="rounded-[16px] bg-gradient-to-r from-violet-600 to-purple-500 px-8 pb-3 pt-8 text-left font-extrabold text-[24px] font-inter w-[calc(50%-12px)] md:w-[calc(33.333%-16px)] lg:w-[calc(16.666%-20px)] hover:-translate-y-2">
+                        Pop
+                    </button>
+
+                    <button
+                        class="rounded-[16px] bg-gradient-to-r from-blue-800 to-blue-500 px-8 pb-3 pt-8 text-left font-extrabold text-[24px] font-inter w-[calc(50%-12px)] md:w-[calc(33.333%-16px)] lg:w-[calc(16.666%-20px)] hover:-translate-y-2">
+                        Rock
+                    </button>
+
+                    <button
+                        class="rounded-[16px] bg-gradient-to-r from-orange-500 to-pink-600 px-8 pb-3 pt-8 text-left font-extrabold text-[24px] font-inter w-[calc(50%-12px)] md:w-[calc(33.333%-16px)] lg:w-[calc(16.666%-20px)] hover:-translate-y-2">
+                        Jazz
+                    </button>
+
+                    <button
+                        class="rounded-[16px] bg-gradient-to-r from-emerald-600 to-teal-400 px-8 pb-3 pt-8 text-left font-extrabold text-[24px] font-inter w-[calc(50%-12px)] md:w-[calc(33.333%-16px)] lg:w-[calc(16.666%-20px)] hover:-translate-y-2">
+                        Electronic
+                    </button>
+
+                    <button
+                        class="rounded-[16px] bg-gradient-to-r from-orange-700 to-orange-500 px-8 pb-3 pt-8 text-left font-extrabold text-[24px] font-inter w-[calc(50%-12px)] md:w-[calc(33.333%-16px)] lg:w-[calc(16.666%-20px)] hover:-translate-y-2">
+                        Hip-Hop
+                    </button>
+
+                    <button
+                        class="rounded-[16px] bg-gradient-to-r from-purple-800 to-purple-500 px-8 pb-3 pt-8 text-left font-extrabold text-[24px] font-inter w-[calc(50%-12px)] md:w-[calc(33.333%-16px)] lg:w-[calc(16.666%-20px)] hover:-translate-y-2">
+                        Classical
+                    </button>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= RECENTLY PLAYED c ================= -->
+
+        <section class="mb-[48px]">
+            <div class="container mx-auto px-4">
+                <h2 class="text-[30px] font-bold font-inter text-white mb-8">Recently Played</h2>
+                <div class="flex flex-wrap -mx-2">
+
+                    <!-- Card 1 -->
+                    <!-- text-center lagane se mobile (w-full) par sab center ho jayega -->
+                    <!-- sm:text-left lagane se tablet aur laptop par wapas pehle jaisa normal (left align) ho jayega -->
+                    <div class=" px-2 pb-5 sm:w-1/2 md:w-1/4 lg:w-1/6 text-center sm:text-left hover:-translate-y-2">
+                        <!-- mx-auto se image box ke bilkul center me aa jayegi -->
+                        <img src="./img/home/recently_play1.png" alt="recently img1" class="mx-auto sm:mx-0">
+                        <h3 class="mt-3 text-sm font-semibold text-white">In the dark</h3>
+                        <p class="mt-1 text-xs text-gray1">Selena Gomez</p>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class=" px-2 pb-5 sm:w-1/2 md:w-1/4 lg:w-1/6 text-center sm:text-left hover:-translate-y-2">
+                        <img src="./img/home/recently_play2.png" alt="recently img2" class="mx-auto sm:mx-0">
+                        <h3 class="mt-3 text-sm font-semibold text-white">Opahlia</h3>
+                        <p class="mt-1 text-xs text-gray1">Taylor Swift</p>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class=" px-2 pb-5 sm:w-1/2 md:w-1/4 lg:w-1/6 text-center sm:text-left hover:-translate-y-2">
+                        <img src="./img/home/recently_play3.png" alt="recently img3" class="mx-auto sm:mx-0">
+                        <h3 class="mt-3 text-sm font-semibold text-white">Heart will go on</h3>
+                        <p class="mt-1 text-xs text-gray1">Celine Dion</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+    <!-- ================= FOOTER c ================= -->
+    <footer class="border-y border-white/[0.05] bg-black4 text-white pt-[80px]">
+        <div class=" mx-auto px-4">
+
+            <!-- Links section (Grid layout for seamless responsiveness) -->
+            <div class="grid grid-cols-1 gap-8 py-12 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 px-[50px]">
+
+                <!-- Brand Section -->
+                <div class="flex flex-col gap-4">
+                    <a href="#" class="flex items-center gap-2">
+                        <img src="./img/home/logo.png" alt="logo" class="h-8 w-auto">
+                        <span class="font-inter text-2xl font-bold text-green2">Auralis</span>
+                    </a>
+
+                    <p class="font-roboto max-w-[260px] text-base text-gray1 leading-relaxed">
+                        Discover millions of songs and podcasts from your favorite artists. Curated playlists for every
+                        mood and moment.
+                    </p>
+                </div>
+
+                <!-- Company Section -->
+                <div>
+                    <p class="font-inter text-lg font-bold mb-4 tracking-wider">COMPANY</p>
+                    <ul class="font-roboto flex flex-col gap-3 text-base text-gray1">
+                        <li><a href="#" class="transition hover:text-white">About</a></li>
+                        <li><a href="#" class="transition hover:text-white">Jobs</a></li>
+                        <li><a href="#" class="transition hover:text-white">For the Record</a></li>
+                    </ul>
+                </div>
+
+                <!-- Support Section -->
+                <div>
+                    <p class="font-inter text-lg font-bold mb-4 tracking-wider">SUPPORT</p>
+                    <ul class="font-roboto flex flex-col gap-3 text-base text-gray1">
+                        <li><a href="#" class="transition hover:text-white">Help Center</a></li>
+                        <li><a href="#" class="transition hover:text-white">Privacy Policy</a></li>
+                        <li><a href="#" class="transition hover:text-white">Terms of Service</a></li>
+                    </ul>
+                </div>
+
+                <!-- Social Section -->
+                <div>
+                    <p class="font-inter text-lg font-bold mb-4 tracking-wider">SOCIAL</p>
+                    <ul class="flex gap-4 items-center">
+                        <li>
+                            <a href="#" aria-label="Website" class="opacity-80 hover:opacity-100 transition">
+                                <img src="./img/home/share.png" alt="website">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" aria-label="Facebook" class="opacity-80 hover:opacity-100 transition">
+                                <img src="./img/home/facebook.png" alt="facebook">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" aria-label="Instagram" class="opacity-80 hover:opacity-100 transition">
+                                <img src="./img/home/instagrame.png" alt="instagram">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" aria-label="X" class="opacity-80 hover:opacity-100 transition">
+                                <img src="./img/home/twitter.png" alt="twitter">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- Footer Bottom Section -->
+            <div
+                class="border-t border-white/[0.05] py-6 flex px-[50px] flex-col gap-4 items-center text-center sm:flex-row sm:justify-between sm:text-left">
+                <p class="font-roboto text-sm text-gray1">
+                    &copy; 2026 <a href="#" class="hover:underline">Auralis</a> Inc.
+                </p>
+                <ul class="font-roboto flex flex-wrap justify-center gap-6 text-sm text-gray1">
+                    <li><a href="#" class="transition hover:text-green1">Legal</a></li>
+                    <li><a href="#" class="transition hover:text-green1">Safety</a></li>
+                    <li><a href="#" class="transition hover:text-green1">Cookies</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- swiper ka js  -->
+
+    <script type="module">
+        import { swiffyslider } from 'https://cdn.jsdelivr.net/npm/swiffy-slider@2.1.0/dist/js/swiffy-slider.js';
+        window.addEventListener('load', () => swiffyslider.init());
+    </script>
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script src="./js/script.js"></script>
+    <script src="./js/app.js"></script>
+
+</body>
+
+</html>

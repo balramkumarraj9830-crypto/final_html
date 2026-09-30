@@ -1,0 +1,1212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Auralis Explore - Discover music, artists, albums and playlists">
+    <title>Auralis — Explore</title>
+
+    <!-- --febicon -- -->
+    <link rel="shortcut icon" href="./favicon/favicon.ico" type="image/x-icon">
+
+
+
+    <!-- ----swiper ka CDN--- -->
+
+    <link href="https://cdn.jsdelivr.net/npm/swiffy-slider@2.1.0/dist/css/swiffy-slider.css" rel="stylesheet"
+        crossorigin="anonymous">
+
+    <!-- Tailwind CSS v4 Browser -->
+    <link rel="stylesheet" href="./output/style.css">
+
+
+    <!-- --font osum cdn link --- -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css"
+        integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+
+
+
+</head>
+
+<body class="bg-black text-white font-inter overflow-hidden">
+    <!-- ================= NAVBAR ================= -->
+    <header id="mainHeader"
+        class="fixed left-0 top-0 z-[9999] w-full border-b border-white/[0.05] bg-[#101010]/90 py-4 backdrop-blur-xl">
+
+        <div class="mx-auto flex w-full items-center justify-between px-5 lg:px-8">
+
+            <!-- =================================================
+                 LOGO
+            ================================================== -->
+
+            <a href="#" class="flex shrink-0 items-center gap-3 sm:gap-[23px]">
+
+                <img src="./img/home/logo.png" alt="Auralis logo" class=" sm:h-10">
+
+                <span class="font-inter text-2xl font-bold tracking-tight text-green2 sm:text-[40px]">
+                    Auralis
+                </span>
+            </a>
+            <!-- =================================================
+                 DESKTOP NAVIGATION
+            ================================================== -->
+
+            <nav class="hidden lg:block">
+                <ul class="flex items-center justify-between gap-8">
+
+                    <li>
+                        <a href="index.html" class="font-bold  transition hover:text-green2">
+                            Home
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="explore.html" class="text-green2 transition hover:text-green2">
+                            Explore
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="playlists.html" class="text-white transition hover:text-green2">
+                            Playlists
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="library.html" class="text-white transition hover:text-green2">
+                            Library
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="premium.html" class="text-white transition hover:text-green2">
+                            Premium
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- =================================================
+                 DESKTOP RIGHT SIDE
+            ================================================== -->
+            <div class="hidden items-center gap-4 lg:flex">
+
+                <!-- Search -->
+                <div class="relative w-full max-w-[320px] xl:w-[462px]">
+                    <div class="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-white opacity-60">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                    <input id="searchInput" type="text" placeholder="Search artists, songs, albums"
+                        class="w-full rounded-full border border-transparent bg-gray4 py-3 pl-11 pr-4 text-xs text-white outline-none placeholder:text-gray6 transition focus:border-green2/30">
+                </div>
+                <!-- Notification -->
+
+                <button type="button" class="shrink-0 border-r border-gray3 pr-4 text-gray1 transition hover:text-white"
+                    title="Notifications" aria-label="Notifications">
+                    <i class="fa-regular fa-bell"></i>
+                </button>
+                <!-- Profile -->
+                <button type="button" class="shrink-0" aria-label="Profile">
+                    <img src="./img/home/profile_img.png" alt="Profile" class=" object-cover">
+                </button>
+            </div>
+
+
+            <!-- =================================================
+                 MOBILE MENU BUTTON
+            ================================================== -->
+
+            <button id="menuBtn" type="button"
+                class="rounded-lg bg-white/5 p-2 text-xl text-white transition hover:bg-white/10 lg:hidden"
+                aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+
+                <i id="menuIcon" class="fa-solid fa-bars">
+                </i>
+            </button>
+        </div>
+
+        <!-- =====================================================
+             MOBILE MENU
+        ====================================================== -->
+
+        <div id="mobileMenu"
+            class="absolute left-0 right-0 top-full hidden border-b border-white/10 bg-[#101010]/95 p-5 shadow-2xl backdrop-blur-2xl lg:hidden">
+
+            <div class="flex flex-col gap-5">
+                <!-- Mobile Search -->
+                <div class="relative w-full">
+                    <div class="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-white opacity-60">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                    <input id="mobileSearchInput" type="text" placeholder="Search artists, songs, albums"
+                        class="h-10 w-full rounded-full bg-[#242424] pl-11 pr-4 text-sm text-white outline-none focus:border focus:border-green2/40">
+                </div>
+                <!-- Mobile Links -->
+
+                <a href="index.html" class="border-b border-white/5 py-1 font-semibold ">
+                    Home
+                </a>
+                <a href="explore.html" class="border-b border-white/5 py-1 text-green2 transition hover:text-white">
+                    Explore
+                </a>
+                <a href="playlists.html" class="border-b border-white/5 py-1 text-gray-300 transition hover:text-white">
+                    Playlists
+                </a>
+                <a href="library.html" class="border-b border-white/5 py-1 text-gray-300 transition hover:text-white">
+                    Library
+                </a>
+
+                <a href="premium.html" class="py-1 text-gray-300 transition hover:text-white">
+                    Premium
+                </a>
+            </div>
+        </div>
+    </header>
+    <!-- ========================================================= -->
+    <!-- MAIN -->
+    <!-- ========================================================= -->
+
+    <main class="pt-[179px]">
+
+        <!-- --banner part -- -->
+
+
+        <section>
+            <div class="container mx-auto px-4">
+
+                <!-- Heading -->
+                <h1 class="mb-6 text-[36px] font-inter font-extrabold leading-[40px] tracking-[-1px]
+                   sm:mb-8 sm:text-[48px] sm:leading-[48px] sm:tracking-[-1.2px]">
+                    Explore
+                </h1>
+
+                <!-- Main Explore Layout -->
+                <div class="flex flex-col gap-6
+                     lg:flex-row lg:gap-[46px]">
+
+                    <!-- ========================= Left Banner================== -->
+
+
+                    <div class="flex min-h-[320px] w-full flex-col justify-end
+                        overflow-hidden rounded-2xl bg-cover bg-center bg-no-repeat
+                        p-5 shadow-lg
+                        sm:min-h-[380px] sm:p-6
+                        lg:h-full lg:min-h-0 lg:w-[65%] lg:p-8" style="
+                    background-image:
+                    linear-gradient(
+                        to top,
+                        rgba(9, 9, 11, 0.95),
+                        rgba(9, 9, 17, 0.697)
+                    ),
+                    url('./img/explore/banner.png');
+                 ">
+
+                        <div class="max-w-md px-2 pb-4 pt-16
+                            sm:px-4 sm:pb-6 sm:pt-20
+                            lg:px-[64px] lg:pb-[64px] lg:pt-[144px]">
+
+                            <!-- Badge -->
+                            <span class="mb-4 inline-block rounded-full bg-green px-3 py-1
+                                 text-xs font-bold uppercase tracking-[1.1px] text-green1
+                                 sm:mb-6">
+                                Artist Spotlight
+                            </span>
+
+                            <!-- Title -->
+                            <h2 class="mb-4 text-2xl font-bold
+                               sm:mb-6 sm:text-3xl
+                               md:text-4xl">
+                                Lunar Echoes
+                            </h2>
+
+                            <!-- Description -->
+                            <p class="font-inter text-base leading-6
+                              sm:text-lg
+                              md:text-xl">
+                                The underground sensation defining the next decade of synth-pop has arrived.
+                            </p>
+
+                        </div>
+                    </div>
+
+
+                    <!-- ===============Right Content ========================== -->
+                    <div class="flex w-full flex-col gap-6
+                        lg:h-full lg:w-[35%] lg:gap-6">
+
+                        <!-- Daily Curations -->
+
+                        <div class="flex flex-1 flex-col rounded-xl bg-black3
+                            p-4
+                            sm:p-5
+                            lg:p-6">
+
+                            <div class="mb-4 lg:mb-6">
+
+                                <h3 class="mb-3 font-inter text-xl font-bold
+                                   sm:text-[22px]
+                                   lg:mb-4 lg:text-2xl">
+                                    Daily Curations
+                                </h3>
+
+                                <p class="font-inter text-sm font-bold leading-5 text-gray1
+                                  sm:text-[15px]
+                                  lg:text-[16px] lg:leading-6">
+                                    Fresh tracks selected specifically for your taste profile.
+                                </p>
+
+                            </div>
+
+                            <!-- Artists -->
+                            <div class="mt-auto flex flex-wrap items-center gap-1 pt-2
+                                sm:flex-nowrap sm:-space-x-6">
+
+                                <img class="h-auto max-w-full" src="./img/explore/daily1.png" alt="daily 1">
+                                <img class="h-auto max-w-full" src="./img/explore/daily2.png" alt="daily 2">
+                                <img class="h-auto max-w-full" src="./img/explore/daily3.png" alt="daily 3">
+                                <img class="h-auto max-w-full" src="./img/explore/daily4.png" alt="daily 4">
+                                <img class="h-auto max-w-full" src="./img/explore/daily5.png" alt="daily 5">
+                                <img class="h-auto max-w-full" src="./img/explore/daily6.png" alt="daily 6">
+                                <img class="h-auto max-w-full" src="./img/explore/daily7.png" alt="daily 7">
+                                <img class="h-auto max-w-full" src="./img/explore/daily8.png" alt="daily 8">
+                                <img class="h-auto max-w-full" src="./img/explore/daily9.png" alt="daily 9">
+
+                            </div>
+                        </div>
+
+
+                        <!-- =========================
+                     Global Charts
+                ========================== -->
+                        <div class="flex flex-1 flex-col rounded-xl bg-black3
+                            p-4
+                            sm:p-5
+                            lg:p-6">
+
+                            <div class="mb-4 lg:mb-6">
+
+                                <h3 class="mb-3 font-inter text-xl font-bold
+                                   sm:text-[22px]
+                                   lg:mb-4 lg:text-2xl">
+                                    Charts: Global
+                                </h3>
+
+                                <p class="font-inter text-sm font-bold leading-5 text-gray1
+                                  sm:text-[15px]
+                                  lg:text-[16px] lg:leading-6">
+                                    The most played tracks across the Aurelia network today.
+                                </p>
+
+                            </div>
+
+
+                            <!-- Charts Content -->
+                            <div class="mt-auto flex items-center justify-between gap-3 pt-2">
+
+                                <!-- Global Artists -->
+                                <div class="flex min-w-0 flex-wrap items-center gap-1
+                                    sm:flex-nowrap sm:-space-x-6">
+
+                                    <img class="h-auto max-w-full" src="./img/explore/global1.png" alt="global 1">
+                                    <img class="h-auto max-w-full" src="./img/explore/global2.png" alt="global 2">
+                                    <img class="h-auto max-w-full" src="./img/explore/global3.png" alt="global 3">
+                                    <img class="h-auto max-w-full" src="./img/explore/global4.png" alt="global 4">
+                                    <img class="h-auto max-w-full" src="./img/explore/global5.png" alt="global 5">
+                                    <img class="h-auto max-w-full" src="./img/explore/global6.png" alt="global 6">
+                                    <img class="h-auto max-w-full" src="./img/explore/global7.png" alt="global 7">
+                                    <img class="h-auto max-w-full" src="./img/explore/global8.png" alt="global 8">
+                                    <img class="h-auto max-w-full" src="./img/explore/global9.png" alt="global 9">
+
+                                </div>
+
+                                <!-- Growth -->
+                                <div class="shrink-0">
+                                    <img class="w-10 sm:w-12 lg:w-14 xl:w-auto" src="./img/explore/growth.png"
+                                        alt="growth">
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Browse Genres -->
+        <section class="mb-[72px]">
+            <div class="container">
+                <div class="mb-5 flex items-end justify-between">
+
+                    <div>
+                        <h2 class="text-[20px] font-bold">
+                            Browse Genres
+                        </h2>
+
+                        <p class="mt-2 text-xs text-gray-500">
+                            Dive deep into the sonic spectrum
+                        </p>
+                    </div>
+
+                    <button id="viewAllGenres" class="text-xs font-semibold text-[#42f57b] transition hover:text-white">
+                        View All
+                    </button>
+
+                </div>
+
+                <!-- ---swiper --part -- -->
+                <div
+                    class="bg-color swiffy-slider slider-item-show4 slider-item-reveal slider-nav-dark slider-nav-outside-expand slider-nav-round slider-nav-page">
+                    <ul class="slider-container py-4" id="slider2">
+
+                        <li><img src="./img/explore/genres1.png" alt="genres 1" loading="lazy"></li>
+                        <li><img src="./img/explore/genres2.png" alt="genres 2" loading="lazy"></li>
+                        <li><img src="./img/explore/genres3.png" alt="genres 3" loading="lazy"></li>
+                        <li><img src="./img/explore/genres4.png" alt="genres 4" loading="lazy"></li>
+                        <li><img src="./img/explore/genres5.png" alt="genres 5" loading="lazy"></li>
+                        <li><img src="./img/explore/genres6.png" alt="genres 6" loading="lazy"></li>
+                        <li><img src="./img/explore/genres7.png" alt="genres 7" loading="lazy"></li>
+                        <li><img src="./img/explore/genres8.png" alt="genres 8" loading="lazy"></li>
+                    </ul>
+                    <button type="button" class="slider-nav" aria-label="Go left"></button>
+                    <button type="button" class="slider-nav slider-nav-next" aria-label="Go left"></button>
+                </div>
+            </div>
+        </section>
+
+        <!-- TRENDING ARTISTS -->
+
+
+        <section class="mb-[72px ]">
+            <div class="container">
+                <h2 class="text-[30px] font-inter font-bold mb-[72px]">Tranding Artists</h2>
+
+                <!-- ---swiper --part 2  -- -->
+                <div
+                    class="bg-color swiffy-slider slider-item-show6 slider-item-reveal slider-nav-dark slider-nav-outside-expand slider-nav-round slider-nav-page">
+                    <ul class="slider-container py-4" id="slider2">
+
+                        <!-- --------Artist 1------- -->
+                        <li>
+                            <div class=" text-center">
+
+                                <!-- Image -->
+                                <div class="px-[6px] pb-6">
+                                    <img src="./img/explore/artists1.png" alt="Tranding artists 1" class="mx-auto">
+                                </div>
+
+                                <!-- Content -->
+                                <div class="pb-6">
+
+                                    <h3 class="text-white text-[16px] font-inter font-medium mb-2">
+                                        Arijit Singh
+                                    </h3>
+
+                                    <p class="text-gray1 text-xs leading-4 font-manrope font-normal">
+                                        Indie Style
+                                    </p>
+
+                                </div>
+
+                            </div>
+                        </li>
+
+                        <!-- --------Artist 2------- -->
+                        <li>
+                            <div class=" text-center">
+
+                                <!-- Image -->
+                                <div class="px-[6px] pb-6">
+                                    <img src="./img/explore/artists2.png" alt="Tranding artists 2" class="mx-auto">
+                                </div>
+
+                                <!-- Content -->
+                                <div class="pb-6">
+
+                                    <h3 class="text-white text-[16px] font-inter font-medium mb-2">
+                                        Shreya Ghosal
+                                    </h3>
+
+                                    <p class="text-gray1 text-xs leading-4 font-manrope font-normal">
+                                        Indie Style
+                                    </p>
+
+                                </div>
+
+                            </div>
+                        </li>
+
+                        <!-- --------Artist 3------- -->
+                        <li>
+                            <div class=" text-center">
+
+                                <!-- Image -->
+                                <div class="px-[6px] pb-6">
+                                    <img src="./img/explore/artists3.png" alt="Tranding artists 3" class="mx-auto">
+                                </div>
+
+                                <!-- Content -->
+                                <div class="pb-6">
+
+                                    <h3 class="text-white text-[16px] font-inter font-medium mb-2">
+                                        One Direction
+                                    </h3>
+
+                                    <p class="text-gray1 text-xs leading-4 font-manrope font-normal">
+                                        Pop
+                                    </p>
+
+                                </div>
+
+                            </div>
+                        </li>
+
+                        <!-- --------Artist 4------- -->
+                        <li>
+                            <div class=" text-center">
+
+                                <!-- Image -->
+                                <div class="px-[6px] pb-6">
+                                    <img src="./img/explore/artists4.png" alt="Tranding artists 4" class="mx-auto">
+                                </div>
+
+                                <!-- Content -->
+                                <div class="pb-6">
+
+                                    <h3 class="text-white text-[16px] font-inter font-medium mb-2">
+                                        Sunidhi Chauhan
+                                    </h3>
+
+                                    <p class="text-gray1 text-xs leading-4 font-manrope font-normal">
+                                        Indian Pop
+                                    </p>
+
+                                </div>
+
+                            </div>
+                        </li>
+
+                        <!-- --------Artist 5------- -->
+                        <li>
+                            <div class=" text-center">
+
+                                <!-- Image -->
+                                <div class="px-[6px] pb-6">
+                                    <img src="./img/explore/artists5.png" alt="Tranding artists 5" class="mx-auto">
+                                </div>
+
+                                <!-- Content -->
+                                <div class="pb-6">
+
+                                    <h3 class="text-white text-[16px] font-inter font-medium mb-2">
+                                        Enrique Iglesias
+                                    </h3>
+
+                                    <p class="text-gray1 text-xs leading-4 font-manrope font-normal">
+                                        Jazz
+                                    </p>
+
+                                </div>
+
+                            </div>
+                        </li>
+
+                        <!-- --------Artist 6------- -->
+                        <li>
+                            <div class=" text-center">
+
+                                <!-- Image -->
+                                <div class="px-[6px] pb-6">
+                                    <img src="./img/explore/artists6.png" alt="Tranding artists 6" class="mx-auto">
+                                </div>
+
+                                <!-- Content -->
+                                <div class="pb-6">
+
+                                    <h3 class="text-white text-[16px] font-inter font-medium mb-2">
+                                        Sonu Nigam
+                                    </h3>
+
+                                    <p class="text-gray1 text-xs leading-4 font-manrope font-normal">
+                                        Indie Classical
+                                    </p>
+
+                                </div>
+
+                            </div>
+                        </li>
+
+                        <!-- --------Artist 7------- -->
+                        <li>
+                            <div class=" text-center">
+
+                                <!-- Image -->
+                                <div class="px-[6px] pb-6">
+                                    <img src="./img/explore/artists7.png" alt="Tranding artists 7" class="mx-auto">
+                                </div>
+
+                                <!-- Content -->
+                                <div class="pb-6">
+
+                                    <h3 class="text-white text-[16px] font-inter font-medium mb-2">
+                                        Adele
+                                    </h3>
+
+                                    <p class="text-gray1 text-xs leading-4 font-manrope font-normal">
+                                        Dream Pop
+                                    </p>
+
+                                </div>
+
+                            </div>
+                        </li>
+
+                        <!-- --------Artist 8------- -->
+                        <li>
+                            <div class=" text-center">
+
+                                <!-- Image -->
+                                <div class="px-[6px] pb-6">
+                                    <img src="./img/explore/artists8.png" alt="Tranding artists 8" class="mx-auto">
+                                </div>
+
+                                <!-- Content -->
+                                <div class="pb-6">
+
+                                    <h3 class="text-white text-[16px] font-inter font-medium mb-2">
+                                        Taylor Swift
+                                    </h3>
+
+                                    <p class="text-gray1 text-xs leading-4 font-manrope font-normal">
+                                        Jazz
+                                    </p>
+
+                                </div>
+
+                            </div>
+                        </li>
+
+                        <!-- --------Artist 9------- -->
+                        <li>
+                            <div class=" text-center">
+
+                                <!-- Image -->
+                                <div class="px-[6px] pb-6">
+                                    <img src="./img/explore/artists9.png" alt="Tranding artists 9" class="mx-auto">
+                                </div>
+
+                                <!-- Content -->
+                                <div class="pb-6">
+
+                                    <h3 class="text-white text-[16px] font-inter font-medium mb-2">
+                                        Bruno Mars
+                                    </h3>
+
+                                    <p class="text-gray1 text-xs leading-4 font-manrope font-normal">
+                                        Rock
+                                    </p>
+
+                                </div>
+
+                            </div>
+                        </li>
+
+                        <!-- --------Artist 10------- -->
+                        <li>
+                            <div class=" text-center">
+
+                                <!-- Image -->
+                                <div class="px-[6px] pb-6">
+                                    <img src="./img/explore/artists10.png" alt="Tranding artists 10" class="mx-auto">
+                                </div>
+
+                                <!-- Content -->
+                                <div class="pb-6">
+
+                                    <h3 class="text-white text-[16px] font-inter font-medium mb-2">
+                                        Niti Mohan
+                                    </h3>
+
+                                    <p class="text-gray1 text-xs leading-4 font-manrope font-normal">
+                                        Indian fusion
+                                    </p>
+
+                                </div>
+
+                            </div>
+                        </li>
+
+                        <!-- --------Artist 11------- -->
+                        <li>
+                            <div class=" text-center">
+
+                                <!-- Image -->
+                                <div class="px-[6px] pb-6">
+                                    <img src="./img/explore/artists11.png" alt="Tranding artists 11" class="mx-auto">
+                                </div>
+
+                                <!-- Content -->
+                                <div class="pb-6">
+
+                                    <h3 class="text-white text-[16px] font-inter font-medium mb-2">
+                                        Asha Bhosle
+                                    </h3>
+
+                                    <p class="text-gray1 text-xs leading-4 font-manrope font-normal">
+                                        Classical & fusion
+                                    </p>
+
+                                </div>
+
+                            </div>
+                        </li>
+
+                        <!-- --------Artist 12------- -->
+                        <li>
+                            <div class=" text-center">
+
+                                <!-- Image -->
+                                <div class="px-[6px] pb-6">
+                                    <img src="./img/explore/artists12.png" alt="Tranding artists 12" class="mx-auto">
+                                </div>
+
+                                <!-- Content -->
+                                <div class="pb-6">
+
+                                    <h3 class="text-white text-[16px] font-inter font-medium mb-2">
+                                        Avijit Bhattacharjee
+                                    </h3>
+
+                                    <p class="text-gray1 text-xs leading-4 font-manrope font-normal">
+                                        Indian fusion
+                                    </p>
+
+                                </div>
+
+                            </div>
+                        </li>
+
+                        <!-- --------Artist 13------- -->
+                        <li>
+                            <div class=" text-center">
+
+                                <!-- Image -->
+                                <div class="px-[6px] pb-6">
+                                    <img src="./img/explore/artists13.png" alt="Tranding artists 13" class="mx-auto">
+                                </div>
+
+                                <!-- Content -->
+                                <div class="pb-6">
+
+                                    <h3 class="text-white text-[16px] font-inter font-medium mb-2">
+                                        Kumar Sanu
+                                    </h3>
+
+                                    <p class="text-gray1 text-xs leading-4 font-manrope font-normal">
+                                        Indian
+                                    </p>
+
+                                </div>
+
+                            </div>
+                        </li>
+
+                        <!-- --------Artist 14------- -->
+                        <li>
+                            <div class=" text-center">
+
+                                <!-- Image -->
+                                <div class="px-[6px] pb-6">
+                                    <img src="./img/explore/artists14.png" alt="Tranding artists 14" class="mx-auto">
+                                </div>
+
+                                <!-- Content -->
+                                <div class="pb-6">
+
+                                    <h3 class="text-white text-[16px] font-inter font-medium mb-2">
+                                        Alka Yagnik
+                                    </h3>
+
+                                    <p class="text-gray1 text-xs leading-4 font-manrope font-normal">
+                                        Indian
+                                    </p>
+
+                                </div>
+
+                            </div>
+                        </li>
+
+                        <!-- --------Artist 15------- -->
+                        <li>
+                            <div class=" text-center">
+
+                                <!-- Image -->
+                                <div class="px-[6px] pb-6">
+                                    <img src="./img/explore/artists15.png" alt="Tranding artists 15" class="mx-auto">
+                                </div>
+
+                                <!-- Content -->
+                                <div class="pb-6">
+
+                                    <h3 class="text-white text-[16px] font-inter font-medium mb-2">
+                                        Kishore Kumar
+                                    </h3>
+
+                                    <p class="text-gray1 text-xs leading-4 font-manrope font-normal">
+                                        Indian
+                                    </p>
+
+                                </div>
+
+                            </div>
+                        </li>
+
+                        <!-- --------Artist 16------- -->
+                        <li>
+                            <div class=" text-center">
+
+                                <!-- Image -->
+                                <div class="px-[6px] pb-6">
+                                    <img src="./img/explore/artists16.png" alt="Tranding artists 16" class="mx-auto">
+                                </div>
+
+                                <!-- Content -->
+                                <div class="pb-6">
+
+                                    <h3 class="text-white text-[16px] font-inter font-medium mb-2">
+                                        Md. Rafi
+                                    </h3>
+
+                                    <p class="text-gray1 text-xs leading-4 font-manrope font-normal">
+                                        Indian
+                                    </p>
+
+                                </div>
+
+                            </div>
+                        </li>
+
+                        <!-- --------Artist 17------- -->
+                        <li>
+                            <div class=" text-center">
+
+                                <!-- Image -->
+                                <div class="px-[6px] pb-6">
+                                    <img src="./img/explore/artists17.png" alt="Tranding artists 17" class="mx-auto">
+                                </div>
+
+                                <!-- Content -->
+                                <div class="pb-6">
+
+                                    <h3 class="text-white text-[16px] font-inter font-medium mb-2">
+                                        Shakira
+                                    </h3>
+
+                                    <p class="text-gray1 text-xs leading-4 font-manrope font-normal">
+                                        Pop
+                                    </p>
+
+                                </div>
+
+                            </div>
+                        </li>
+
+                        <!-- --------Artist 18------- -->
+                        <li>
+                            <div class=" text-center">
+
+                                <!-- Image -->
+                                <div class="px-[6px] pb-6">
+                                    <img src="./img/explore/artists18.png" alt="Tranding artists 18" class="mx-auto">
+                                </div>
+
+                                <!-- Content -->
+                                <div class="pb-6">
+
+                                    <h3 class="text-white text-[16px] font-inter font-medium mb-2">
+                                        Ed Sheeran
+                                    </h3>
+
+                                    <p class="text-gray1 text-xs leading-4 font-manrope font-normal">
+                                        Jazz
+                                    </p>
+
+                                </div>
+
+                            </div>
+                        </li>
+
+                        <!-- --------Artist 19------- -->
+                        <li>
+                            <div class=" text-center">
+
+                                <!-- Image -->
+                                <div class="px-[6px] pb-6">
+                                    <img src="./img/explore/artists19.png" alt="Tranding artists 19" class="mx-auto">
+                                </div>
+
+                                <!-- Content -->
+                                <div class="pb-6">
+
+                                    <h3 class="text-white text-[16px] font-inter font-medium mb-2">
+                                        Justin Beiber
+                                    </h3>
+
+                                    <p class="text-gray1 text-xs leading-4 font-manrope font-normal">
+                                        Pop
+                                    </p>
+
+                                </div>
+
+                            </div>
+                        </li>
+
+                        <!-- --------Artist 20------- -->
+                        <li>
+                            <div class=" text-center">
+
+                                <!-- Image -->
+                                <div class="px-[6px] pb-6">
+                                    <img src="./img/explore/artists20.png" alt="Tranding artists 20" class="mx-auto">
+                                </div>
+
+                                <!-- Content -->
+                                <div class="pb-6">
+
+                                    <h3 class="text-white text-[16px] font-inter font-medium mb-2">
+                                        Adele
+                                    </h3>
+
+                                    <p class="text-gray1 text-xs leading-4 font-manrope font-normal">
+                                        Pop
+                                    </p>
+
+                                </div>
+
+                            </div>
+                        </li>
+
+
+
+                    </ul>
+                    <button type="button" class="slider-nav" aria-label="Go left"></button>
+                    <button type="button" class="slider-nav slider-nav-next" aria-label="Go left"></button>
+                </div>
+
+
+            </div>
+        </section>
+
+        <section class="mb-[72px]">
+            <div class="container">
+                <h2 class="text-[30px] font-inter font-bold mb-[72px]">Popularn Albums</h2>
+                <!-- ---swiper --part 3  -- -->
+                <div
+                    class="bg-color swiffy-slider slider-item-show5 slider-item-reveal slider-nav-dark slider-nav-outside-expand slider-nav-round slider-nav-page">
+                    <ul class="slider-container py-4" id="slider2">
+
+                        <!-- --------Artist 1------- -->
+                        <li>
+                            <div class=" text-center">
+
+                                <!-- Image -->
+                                <div class="px-[6px] pb-6">
+                                    <img src="./img/explore/popular1.png" alt="popular artists 1">
+                                </div>
+
+                                <!-- Content -->
+                                <div class="pb-6">
+
+                                    <h3 class="text-white text-[16px] font-inter font-medium mb-2">
+                                        Kumar Sanu Hits
+                                    </h3>
+
+                                    <p class="text-gray1 text-[14px]  font-inter font-normal">
+                                        90s Hits
+                                    </p>
+
+                                </div>
+
+                            </div>
+                        </li>
+
+                        <!-- --------Artist 2------- -->
+                        <li>
+                            <div class=" text-center">
+
+                                <!-- Image -->
+                                <div class="px-[6px] pb-6">
+                                    <img src="./img/explore/popular2.png" alt="popular artists 2">
+                                </div>
+
+                                <!-- Content -->
+                                <div class="pb-6">
+
+                                    <h3 class="text-white text-[16px] font-inter font-medium mb-2">
+                                        Evergreen Oldie
+                                    </h3>
+
+                                    <p class="text-gray1 text-[14px]  font-inter font-normal">
+                                        80s Hits
+                                    </p>
+
+                                </div>
+
+                            </div>
+                        </li>
+
+                        <!-- --------Artist 3------- -->
+                        <li>
+                            <div class=" text-center">
+
+                                <!-- Image -->
+                                <div class="px-[6px] pb-6">
+                                    <img src="./img/explore/popular3.png" alt="popular artists 3">
+                                </div>
+
+                                <!-- Content -->
+                                <div class="pb-6">
+
+                                    <h3 class="text-white text-[16px] font-inter font-medium mb-2">
+                                        New Bollywood Hits
+                                    </h3>
+
+                                    <p class="text-gray1 text-[14px]  font-inter font-normal">
+                                        2026,Hindi Hits
+                                    </p>
+
+                                </div>
+
+                            </div>
+                        </li>
+
+                        <!-- --------Artist 4------- -->
+                        <li>
+                            <div class=" text-center">
+
+                                <!-- Image -->
+                                <div class="px-[6px] pb-6">
+                                    <img src="./img/explore/popular4.png" alt="popular artists 4">
+                                </div>
+
+                                <!-- Content -->
+                                <div class="pb-6">
+
+                                    <h3 class="text-white text-[16px] font-inter font-medium mb-2">
+                                        Recent International Hits
+                                    </h3>
+
+                                    <p class="text-gray1 text-[14px]  font-inter font-normal">
+                                        2026,Hollywood Hits
+                                    </p>
+
+                                </div>
+
+                            </div>
+                        </li>
+
+                        <!-- --------Artist 5------- -->
+                        <li>
+                            <div class=" text-center">
+
+                                <!-- Image -->
+                                <div class="px-[6px] pb-6">
+                                    <img src="./img/explore/popular5.png" alt="popular artists 5">
+                                </div>
+
+                                <!-- Content -->
+                                <div class="pb-6">
+
+                                    <h3 class="text-white text-[16px] font-inter font-medium mb-2">
+                                        Selena Gomez New Hits
+                                    </h3>
+
+                                    <p class="text-gray1 text-[14px]  font-inter font-normal">
+                                        Recent Hits
+                                    </p>
+
+                                </div>
+
+                            </div>
+                        </li>
+
+
+                    </ul>
+                    <button type="button" class="slider-nav" aria-label="Go left"></button>
+                    <button type="button" class="slider-nav slider-nav-next" aria-label="Go left"></button>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="mb-12">
+            <div class="container mx-auto px-4"> <!-- Section ko center karne ke liye -->
+                <h2 class="text-[30px] my-8 font-inter font-bold text-white">Moods & Activities</h2>
+
+                <!-- flex-wrap lagaya taaki screen choti hone par cards niche aa sakein -->
+                <div class="flex flex-wrap -mx-3">
+
+                    <!-- Card 1: Chill -->
+                    <!-- w-full (mobile pe 1 card), sm:w-1/2 (tablet pe 2), lg:w-1/4 (desktop pe 4) -->
+                    <div class="w-full sm:w-1/2 lg:w-1/4 px-3 mb-6">
+                        <div class="rounded-[12px] bg-black1 p-6 flex items-center h-full hover:bg-[#232222] ">
+                            <div class="pr-4 shrink-0">
+                                <img src="./img/explore/moods1.png" alt="moods img 1">
+                            </div>
+                            <div>
+                                <h3 class="font-manrope text-[18px] leading-7 text-white font-semibold">Chill</h3>
+                                <p class="text-gray1 text-xs leading-4 font-manrope font-normal">Unwind and relax</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 2: Workout -->
+                    <div class="w-full sm:w-1/2 lg:w-1/4 px-3 mb-6">
+                        <div class="rounded-[12px] bg-black1 p-6 flex items-center h-full hover:bg-[#232222]">
+                            <div class="pr-4 shrink-0">
+                                <img src="./img/explore/moods2.png" alt="moods img 2">
+                            </div>
+                            <div>
+                                <h3 class="font-manrope text-[18px] leading-7 text-white font-semibold">Workout</h3>
+                                <p class="text-gray1 text-xs leading-4 font-manrope font-normal">High-octane energy
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 3: Party -->
+                    <div class="w-full sm:w-1/2 lg:w-1/4 px-3 mb-6">
+                        <div class="rounded-[12px] bg-black1 p-6 flex items-center h-full hover:bg-[#232222]">
+                            <div class="pr-4 shrink-0">
+                                <img src="./img/explore/moods3.png" alt="moods img 3">
+                            </div>
+                            <div>
+                                <h3 class="font-manrope text-[18px] leading-7 text-white font-semibold">Party</h3>
+                                <p class="text-gray1 text-xs leading-4 font-manrope font-normal">The dance floor
+                                    awaits</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 4: Focus -->
+                    <div class="w-full sm:w-1/2 lg:w-1/4 px-3 mb-6">
+                        <div class="rounded-[12px] bg-black1 p-6 flex items-center h-full hover:bg-[#232222]">
+                            <div class="pr-4 shrink-0">
+                                <img src="./img/explore/moods4.png" alt="moods img 4">
+                            </div>
+                            <div>
+                                <h3 class="font-manrope text-[18px] leading-7 text-white font-semibold">Focus</h3>
+                                <p class="text-gray1 text-xs leading-4 font-manrope font-normal">Deep work sessions
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ================= FOOTER c ================= -->
+    <footer class="border-y border-white/[0.05] bg-black4 text-white pt-[80px]">
+        <div class=" mx-auto px-4">
+
+            <!-- Links section (Grid layout for seamless responsiveness) -->
+            <div class="grid grid-cols-1 gap-8 py-12 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 px-[50px]">
+
+                <!-- Brand Section -->
+                <div class="flex flex-col gap-4">
+                    <a href="#" class="flex items-center gap-2">
+                        <img src="./img/home/logo.png" alt="logo" class="h-8 w-auto">
+                        <span class="font-inter text-2xl font-bold text-green2">Auralis</span>
+                    </a>
+                    <p class="font-roboto max-w-[260px] text-base text-gray1 leading-relaxed">
+                        Discover millions of songs and podcasts from your favorite artists. Curated playlists for every
+                        mood and moment.
+                    </p>
+                </div>
+
+                <!-- Company Section -->
+                <div>
+                    <p class="font-inter text-lg font-bold mb-4 tracking-wider">COMPANY</p>
+                    <ul class="font-roboto flex flex-col gap-3 text-base text-gray1">
+                        <li><a href="#" class="transition hover:text-white">About</a></li>
+                        <li><a href="#" class="transition hover:text-white">Jobs</a></li>
+                        <li><a href="#" class="transition hover:text-white">For the Record</a></li>
+                    </ul>
+                </div>
+
+                <!-- Support Section -->
+                <div>
+                    <p class="font-inter text-lg font-bold mb-4 tracking-wider">SUPPORT</p>
+                    <ul class="font-roboto flex flex-col gap-3 text-base text-gray1">
+                        <li><a href="#" class="transition hover:text-white">Help Center</a></li>
+                        <li><a href="#" class="transition hover:text-white">Privacy Policy</a></li>
+                        <li><a href="#" class="transition hover:text-white">Terms of Service</a></li>
+                    </ul>
+                </div>
+
+                <!-- Social Section -->
+                <div>
+                    <p class="font-inter text-lg font-bold mb-4 tracking-wider">SOCIAL</p>
+                    <ul class="flex gap-4 items-center">
+                        <li>
+                            <a href="#" aria-label="Website" class="opacity-80 hover:opacity-100 transition">
+                                <img src="./img/home/share.png" alt="website">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" aria-label="Facebook" class="opacity-80 hover:opacity-100 transition">
+                                <img src="./img/home/facebook.png" alt="facebook">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" aria-label="Instagram" class="opacity-80 hover:opacity-100 transition">
+                                <img src="./img/home/instagrame.png" alt="instagram">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" aria-label="X" class="opacity-80 hover:opacity-100 transition">
+                                <img src="./img/home/twitter.png" alt="twitter">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- Footer Bottom Section -->
+            <div
+                class="border-t border-white/[0.05] py-6 flex px-[50px] flex-col gap-4 items-center text-center sm:flex-row sm:justify-between sm:text-left">
+                <p class="font-roboto text-sm text-gray1">
+                    &copy; 2026 <a href="#" class="hover:underline">Auralis</a> Inc.
+                </p>
+                <ul class="font-roboto flex flex-wrap justify-center gap-6 text-sm text-gray1">
+                    <li><a href="#" class="transition hover:text-green1">Legal</a></li>
+                    <li><a href="#" class="transition hover:text-green1">Safety</a></li>
+                    <li><a href="#" class="transition hover:text-green1">Cookies</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </footer>
+
+
+
+    <!-- swiper ka js  -->
+
+    <script type="module">
+        import { swiffyslider } from 'https://cdn.jsdelivr.net/npm/swiffy-slider@2.1.0/dist/js/swiffy-slider.js';
+        window.addEventListener('load', () => swiffyslider.init());
+    </script>
+    <!-- --java script -- -->
+    <script src="./js/script.js"></script>
+
+</body>
+
+</html>
